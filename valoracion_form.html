@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Integra Clinic">
+    <meta name="keywords" content="html, css, xml, javascript, asistentes virtuales, virtual assistants">
+    <meta name="description" content="IntegraClinic - Servicios profesionales de asistentes virtuales">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
+      <title>Integra Clinic - Servicios Odontologicos</title> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="CSS/SVEstilos.css" rel="stylesheet">
+</head>
+<body> 
+    <header>   
+      <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid px-3">
+          <!-- ===== MOBILE CONTAINER (hidden on desktop) ===== -->
+          <div class="navbar-mobile-container d-flex d-lg-none w-100 align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img src="IMG/int_log_1.png" alt="SnapVAS Logo" class="logo-img">
+            </a>
+            
+            <!-- Spacer to center Hire button -->
+            <div class="mobile-spacer flex-grow-1"></div>
+            
+            <!-- Hire Now Button -->
+            <a href="valoracion_form.html" class="btn hire-now-btn mx-2">Agendate</a>
+            
+            <!-- Spacer to balance space -->
+            <div class="mobile-spacer flex-grow-1"></div>
+            
+            <!-- Menu Toggle -->
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- ===== DESKTOP CONTAINER (hidden on mobile) ===== -->
+          <div class="d-none d-lg-flex w-100 align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img src="IMG/int_BG_White.png" alt="SnapVAS Logo" class="logo-img">
+            </a>
+
+            <!-- Desktop Menu Items -->
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Nosotros</a></li>
+               <!-- <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="">Planes</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Contactanos</a></li>
+              </ul>
+            </div>
+
+            <!-- Desktop Hire Button -->
+            <a href="" class="btn hire-now-btn ms-3 d-lg-inline-block">Agenda Ya</a>
+          </div>
+
+          <!-- ===== COLLAPSIBLE MENU (mobile only) ===== -->
+          <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="">Careers</a></li>
+              <li class="nav-item"><a class="nav-link" href="">Pricing</a></li>
+              <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Sección de Contacto -->
+<section class="contact-section">
+    <div class="application-container">
+        <div class="application-header">
+            <h1>Únete a Nuestro Equipo</h1>
+            <p>Forma parte de Integra Clinic, donde combinamos pasión por la odontología con atención humana para crear sonrisas saludables y hermosas.</p>
+        </div>
+        
+        <div class="application-content">
+            <div class="form-section">
+                <div class="form-step-indicator">
+                    <div class="form-step step-active">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Información Personal</div>
+                    </div>
+                    <div class="form-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Experiencia Profesional</div>
+                    </div>
+                    <div class="form-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Finalizar</div>
+                    </div>
+                </div>
+                
+                <form id="applicant-form">
+                    <div class="form-group">
+                        <label for="from_name"><i class="fas fa-user"></i> Nombre Completo</label>
+                        <input type="text" id="from_name" name="from_name" placeholder="Ingresa tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="from_email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" id="from_email" name="from_email" placeholder="tu.email@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="from_job"><i class="fas fa-briefcase"></i> Especialidad de Interés</label>
+                        <select id="from_job" name="from_job" required>
+                            <option value="" disabled selected>Selecciona tu especialidad de interés</option>
+                            <option value="Ortodoncista">Ortodoncista</option>
+                            <option value="Cirujano Oral">Cirujano Oral</option>
+                            <option value="Endodoncista">Endodoncista</option>
+                            <option value="Estética Dental">Estética Dental</option>
+                            <option value="Rehabilitador Oral">Rehabilitador Oral</option>
+                            <option value="Odontólogo General">Odontólogo General</option>
+                            <option value="Asistente Dental">Asistente Dental</option>
+                            <option value="Higienista Dental">Higienista Dental</option>
+                            <option value="Administrativo en Salud">Administrativo en Salud</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="from_message"><i class="fas fa-comment"></i> Carta de Motivación</label>
+                        <textarea id="from_message" name="from_message" placeholder="Cuéntanos sobre tu pasión por la odontología y por qué te gustaría formar parte de Integra Clinic..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-file-upload"></i> Adjunta tu Hoja de Vida</label>
+                        <div class="file-upload-container" id="resume-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Arrastra tu hoja de vida aquí o haz clic para seleccionar</p>
+                            <div class="file-upload-btn">Seleccionar Archivo</div>
+                            <input type="file" id="from_resume" name="from_resume" class="file-input" accept=".pdf,.doc,.docx" required>
+                        </div>
+                        <div class="selected-file" id="selected-file">
+                            <i class="fas fa-file-pdf"></i>
+                            <span id="file-name">Ningún archivo seleccionado</span>
+                        </div>
+                    </div>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Enviar Solicitud</button>
+                </form>
+                
+                <div class="contact-info">
+                    <p>¿Preguntas? Escríbenos a <a href="mailto:info@integraclinic.co">info@integraclinic.co</a></p>
+                    <p>Villavicencio, Colombia. Transformando sonrisas con tecnología moderna y atención humana.</p>
+                </div>
+            </div>
+            <div class="benefits-section">
+                <h2>¿Por qué trabajar en Integra Clinic?</h2>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <i class="fas fa-teeth benefit-icon"></i>
+                        <div class="benefit-text">Tecnología odontológica de última generación para diagnósticos precisos y tratamientos avanzados</div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-user-md benefit-icon"></i>
+                        <div class="benefit-text">Desarrollo profesional continuo con especialistas certificados y mentoría experta</div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-heart benefit-icon"></i>
+                        <div class="benefit-text">Ambiente colaborativo centrado en el bienestar del paciente y la excelencia clínica</div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-comments benefit-icon"></i>
+                        <div class="benefit-text">Acompañamiento personalizado a pacientes con planes de tratamiento claros y sin sorpresas</div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-calendar-alt benefit-icon"></i>
+                        <div class="benefit-text">Agenda organizada que valora tu tiempo y promueve un equilibrio entre vida personal y profesional</div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-smile benefit-icon"></i>
+                        <div class="benefit-text">Satisfacción de transformar vidas creando sonrisas saludables y hermosas en cada tratamiento</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer (igual que en index.html) -->
+<footer class="footer-custom py-5">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+        <div class="d-flex flex-column">
+          <div class="d-flex align-items-center mb-3">
+            <a href="index.html">
+              <img src="IMG/log_BL.png" alt="Integra Clinic Logo" style="max-height: 30px;">
+            </a>
+            <div class="ms-3 d-flex gap-2">
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          
+          <div class="contact-info">
+            <p class="mb-2">Clínica Integra · Servicios Odontológicos</p>
+            <p class="mb-2">contacto@integraclinic.com</p>
+            <p>Colombia · +57 300 000 0000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="col-6 col-sm-3 col-md-2">
+        <h6><a class="nav-link" href="">Servicios</a></h6>
+        <ul>
+          <li><a class="nav-link" href="">Nuestros Tratamientos</a></li>
+          <li><a class="nav-link" href="">Especialidades</a></li>
+          <li><a class="nav-link" href="">Planes y Valoración</a></li>
+        </ul>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-6 col-sm-3 col-md-2">
+        <h6><a class="nav-link" href="">Nosotros</a></h6>
+        <ul class="list-unstyled">
+          <li><a href="">Términos y Condiciones</a></li>
+          <li><a href="">Política de Privacidad</a></li>
+        </ul>
+        <a href="" target="_blank" class="btn-get-hired mt-2">Agendar Cita</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+
+<!-- jQuery (if needed) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Your custom JS file -->
+<script src="JS/applicant.js"></script>
+</body>
+</html>
