@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Integra Clinic">
-    <meta name="keywords" content="html, css, xml, javascript, asistentes virtuales, virtual assistants">
-    <meta name="description" content="IntegraClinic - Servicios profesionales de asistentes virtuales">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
-      <title>Integra Clinic - Servicios Odontologicos</title> 
+    <meta name="keywords" content="odontología, clínica dental, implantes, ortodoncia, Villavicencio">
+    <meta name="description" content="Integra Clinic - Servicios Odontológicos de élite en Villavicencio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Integra Clinic — Odontología de Élite</title>
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -16,657 +17,428 @@
       gtag('config', 'GA_MEASUREMENT_ID');
     </script>
     <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS (needed early for collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts: Cormorant Garamond + DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="CSS/SVEstilos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>   
-      <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-        <div class="container-fluid px-3">
-          <!-- ===== MOBILE CONTAINER (hidden on desktop) ===== -->
-          <div class="navbar-mobile-container d-flex d-lg-none w-100 align-items-center">
-            <!-- Logo -->
-            <a class="navbar-brand" href="index.html">
-              <img src="IMG/int_log_1.png" alt="SnapVAS Logo" class="logo-img">
-            </a>
-            
-            <!-- Spacer to center Hire button -->
-            <div class="mobile-spacer flex-grow-1"></div>
-            
-            <!-- Hire Now Button -->
-            <a href="contact.html" class="btn hire-now-btn mx-2">Agendate</a>
-            
-            <!-- Spacer to balance space -->
-            <div class="mobile-spacer flex-grow-1"></div>
-            
-            <!-- Menu Toggle -->
-            <button class="navbar-toggler" type="button" 
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#navbarNav">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
 
-          <!-- ===== DESKTOP CONTAINER (hidden on mobile) ===== -->
-          <div class="d-none d-lg-flex w-100 align-items-center">
-            <!-- Logo -->
-            <a class="navbar-brand" href="index.html">
-              <img src="IMG/int_BG_White.png" alt="SnapVAS Logo" class="logo-img">
-            </a>
+<!-- ===== NAVBAR ============================= -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid px-3">
 
-            <!-- Desktop Menu Items -->
-            <div class="collapse navbar-collapse">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Nosotros</a></li>
-               <!-- <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li> -->
-                <li class="nav-item"><a class="nav-link" href="">Planes</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contactanos</a></li>
-              </ul>
-            </div>
+      <!-- MOBILE -->
+      <div class="navbar-mobile-container d-flex d-lg-none w-100 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="IMG/int_log_1.png" alt="Integra Clinic Logo" class="logo-img">
+        </a>
+        <div class="mobile-spacer flex-grow-1"></div>
+        <a href="contact.html" class="btn hire-now-btn mx-2">Agéndate</a>
+        <div class="mobile-spacer flex-grow-1"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
-            <!-- Desktop Hire Button -->
-            <a href="contact.html" class="btn hire-now-btn ms-3 d-lg-inline-block">Agenda Ya</a>
-          </div>
-
-          <!-- ===== COLLAPSIBLE MENU (mobile only) ===== -->
-          <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="">Nosotros</a></li>
-              <li class="nav-item"><a class="nav-link" href="">Planes</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contactanos</a></li>
-            </ul>
-          </div>
+      <!-- DESKTOP -->
+      <div class="d-none d-lg-flex w-100 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="IMG/int_BG_White.png" alt="Integra Clinic Logo" class="logo-img">
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Planes</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contáctanos</a></li>
+          </ul>
         </div>
-      </nav>
-    </header>
+        <a href="contact.html" class="btn hire-now-btn ms-3 d-lg-inline-block">Agenda Ya</a>
+      </div>
 
-    <!-- Carrusel de banners (5 banners) -->
-<div class="container luxury-container" id="subintro">
-    <div id="Mainintro" class="row g-0 align-items-stretch">
-        
-        <!-- Columna de texto con fondo de lujo -->
-        <div id="Mainintro-s1" class="col-lg-7">
-            <div class="luxury-content">
-                <!-- Elemento decorativo premium -->
-                <div class="luxury-badge">
-                    <span class="diamond-icon">◆</span>
-                    <span>EXCELENCIA DENTAL</span>
-                </div>
-                
-                <h1 class="luxury-title">
-                    Descubre la <span class="highlight">odontología de élite</span> que tu sonrisa merece
-                </h1>
-                
-                <div class="luxury-divider">
-                    <span class="divider-line"></span>
-                    <span class="divider-diamond">◆</span>
-                    <span class="divider-line"></span>
-                </div>
-                
-                <h3 class="luxury-subtitle">
-                    En <span class="brand-highlight">Integra Clinic</span>, transformamos 
-                    <span class="italic-light">tu experiencia dental</span> en un 
-                    <span class="italic-light">momento de lujo y bienestar</span>
-                </h3>
-                
-                <ul class="luxury-features">
-                    <li>
-                        <span class="feature-icon">✓</span>
-                        <span>Tecnología de vanguardia europea</span>
-                    </li>
-                    <li>
-                        <span class="feature-icon">✓</span>
-                        <span>Especialistas certificados internacionalmente</span>
-                    </li>
-                    <li>
-                        <span class="feature-icon">✓</span>
-                        <span>Ambiente exclusivo y completamente privado</span>
-                    </li>
-                    <li>
-                        <span class="feature-icon">✓</span>
-                        <span>Materiales premium garantizados de por vida</span>
-                    </li>
-                </ul>
-                
-                <div class="luxury-cta">
-                    <p class="cta-legend">
-                        <span class="legend-icon">⏱</span>
-                        <em>Citas limitadas disponibles - Agenda hoy</em>
-                    </p>
-                    
-                    <div class="cta-buttons">
-                        <a href="#" class="btn-luxury btn-luxury-primary">
-                            <span class="btn-icon">📅</span>
-                            Reservar Consulta Privada
-                            <span class="btn-arrow">→</span>
-                        </a>
-                        <a href="#" class="btn-luxury btn-luxury-secondary">
-                            <span class="btn-icon">✨</span>
-                            Ver Galería de Sonrisas
-                            <span class="btn-arrow">→</span>
-                        </a>
-                    </div>
-                    
-                    <div class="luxury-assurance">
-                        <span class="assurance-icon">🛡</span>
-                        <span class="assurance-text">Garantía de satisfacción y confidencialidad absoluta</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Columna de imagen con efectos premium -->
-        <div id="Mainintro-s2" class="col-lg-5">
-            <div class="luxury-image-container">
-                <!-- Marco dorado decorativo -->
-                <div class="image-frame">
-                    <div class="frame-corner frame-tl"></div>
-                    <div class="frame-corner frame-tr"></div>
-                    <div class="frame-corner frame-bl"></div>
-                    <div class="frame-corner frame-br"></div>
-                </div>
-                
-                <!-- Imagen principal con efecto de elevación -->
-                <div class="image-wrapper">
-                    <img src="IMG/Int_9.png" class="luxury-image" alt="Clínica Dental de Lujo - Integra Clinic">
-                    
-                    <!-- Overlay de lujo -->
-                    <div class="image-overlay">
-                        <div class="overlay-text">
-                            <span class="overlay-icon">⭐</span>
-                            <span>Experiencia 5 Estrellas</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sello de calidad -->
-                <div class="quality-badge">
-                    <div class="badge-content">
-                        <span class="badge-icon">🏆</span>
-                        <span class="badge-text">Certificación de Excelencia 2024</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <!-- MOBILE COLLAPSE -->
+      <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Planes</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contáctanos</a></li>
+        </ul>
+      </div>
+
     </div>
+  </nav>
+</header>
+
+
+<!-- ===== HERO ================================ -->
+<div class="container-fluid luxury-container" id="subintro">
+  <div id="Mainintro" class="row g-0 align-items-stretch">
+
+    <!-- Columna de texto -->
+    <div id="Mainintro-s1" class="col-lg-7">
+      <div class="luxury-content">
+
+        <div class="luxury-badge">
+          <span class="diamond-icon">◆</span>
+          <span>Excelencia Dental</span>
+        </div>
+
+        <h1 class="luxury-title">
+          Descubre la <span class="highlight">odontología de élite</span><br>que tu sonrisa merece
+        </h1>
+
+        <div class="luxury-divider">
+          <span class="divider-line"></span>
+          <span class="divider-diamond">◆</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <h3 class="luxury-subtitle">
+          En <span class="brand-highlight">Integra Clinic</span>, transformamos
+          <span class="italic-light">tu experiencia dental</span> en un
+          <span class="italic-light">momento de cuidado y bienestar</span>
+        </h3>
+
+        <ul class="luxury-features">
+          <li><span class="feature-icon">✓</span><span>Tecnología de vanguardia europea</span></li>
+          <li><span class="feature-icon">✓</span><span>Especialistas certificados internacionalmente</span></li>
+          <li><span class="feature-icon">✓</span><span>Ambiente exclusivo y completamente privado</span></li>
+          <li><span class="feature-icon">✓</span><span>Materiales premium garantizados de por vida</span></li>
+        </ul>
+
+        <div class="luxury-cta">
+          <p class="cta-legend">
+            <span class="legend-icon">⏱</span>
+            <em>Citas limitadas disponibles — Agenda hoy</em>
+          </p>
+
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn-luxury btn-luxury-primary">
+              <span class="btn-icon">📅</span>
+              Reservar Consulta
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="#" class="btn-luxury btn-luxury-secondary">
+              <span class="btn-icon">✨</span>
+              Ver Galería de Sonrisas
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+
+          <div class="luxury-assurance">
+            <span class="assurance-icon">🛡</span>
+            <span class="assurance-text">Garantía de satisfacción y confidencialidad absoluta</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Columna de imagen -->
+    <div id="Mainintro-s2" class="col-lg-5">
+      <div class="luxury-image-container">
+        <div class="image-frame">
+          <div class="frame-corner frame-tl"></div>
+          <div class="frame-corner frame-tr"></div>
+          <div class="frame-corner frame-bl"></div>
+          <div class="frame-corner frame-br"></div>
+        </div>
+        <div class="image-wrapper">
+          <img src="IMG/Int_9.png" class="luxury-image" alt="Integra Clinic">
+          <div class="image-overlay">
+            <div class="overlay-text">
+              <span class="overlay-icon">⭐</span>
+              <span>Experiencia 5 Estrellas</span>
+            </div>
+          </div>
+        </div>
+        <div class="quality-badge">
+          <div class="badge-content">
+            <span class="badge-icon">🏆</span>
+            <span class="badge-text">Certificación de Excelencia 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-  
+
+
+<!-- ===== POR QUÉ ELEGIRNOS =================== -->
 <section>
- <div class="container" id="moresnap">
+  <div class="container" id="moresnap">
     <div class="image-section">
       <div class="image-wrapper">
-        <img class="background" src="IMG/back_pareja_1.png" alt="Background" />
-        <img class="foreground" src="IMG/int_6.jpeg" alt="Snap VAs Team" />
+        <img class="background" src="IMG/back_pareja_1.png" alt="">
+        <img class="foreground" src="IMG/int_6.jpeg" alt="Equipo Integra Clinic">
       </div>
     </div>
     <div class="text-section">
-      <h2>Sin dolor - <strong>Más Sonrisas</strong></h2>
-      <h3>Por qué elegirnos <strong>Integra Clinic?</strong></h3>
+      <span class="section-tag">¿Por qué nosotros?</span>
+      <h2>Sin dolor —<br><strong>Más Sonrisas</strong></h2>
+      <h3>Por qué elegir <strong>Integra Clinic</strong></h3>
 
-          <div class="feature">
-            <b>ATENCIÓN ODONTOLÓGICA QUE IMPULSA TU SONRISA</b>
-            Mejora tu salud oral hasta 3x con diagnósticos precisos y tratamientos integrales. En Integra Clinic nos encargamos de tu bienestar para que sonrías con tranquilidad.
-          </div>
-
-          <div class="feature">
-            <b>VALORACIÓN PERSONALIZADA Y ACOMPAÑAMIENTO</b>
-            Cada paciente es único. Nuestro equipo diseña planes de tratamiento a tu medida, con acompañamiento continuo y explicaciones claras en cada etapa.
-          </div>
-
-          <div class="feature">
-            <b>ESPECIALISTAS CALIFICADOS Y TECNOLOGÍA MODERNA</b>
-            Contamos con profesionales certificados y equipos de última generación para brindarte precisión, comodidad y resultados confiables.
-          </div>
-
-          <div class="feature">
-            <b>OPTIMIZA TIEMPO Y COSTOS EN TU TRATAMIENTO</b>
-            Prevención y planificación inteligente que te ayudan a evitar procedimientos complejos y gastos innecesarios sin sacrificar calidad.
-          </div>
-
-          <div class="feature">
-            <b>EXPERIENCIA COMPROBADA Y PACIENTES SATISFECHOS</b>
-            Nuestros pacientes nos eligen y recomiendan por nuestra atención humana, resultados visibles y compromiso con cada sonrisa.
-          </div>
-
-          <div class="feature">
-            <b>AGENDA FÁCIL, RÁPIDA Y SIN COMPLICACIONES</b>
-            Programa tu valoración en minutos y recibe atención oportuna, sin largas esperas ni procesos engorrosos.
-          </div>
-
-
-      <a class="cta-button" href="" target="_blank">Agenda tu cita <strong>HOY!</strong></a>
-    </div>
-    </div>
-</section>    
-<!-- Section Hire Us -->
-<section id="hire" class="py-5 snap-section">
-    <div class="main-container HireMain">
-        <div class="wave-top">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
-                    opacity=".25" class="shape-fill"></path>
-                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" 
-                    opacity=".5" class="shape-fill"></path>
-                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" 
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-        
-        <h1 class="services-title">Nuestros Servicios</h1>
-        <p class="services-subtitle">Obten el mejor servicio y atención Ondotologia de todo Villavicencio.</p>
-
-        <div class="services-showcase">
-   <!-- Carousel Wrapper -->
-            <div id="servicesCarouselDesktop" class="carousel slide d-none d-lg-block" data-bs-ride="carousel" data-bs-wrap="true">
-  <!-- Dots circulares -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide-to="2"></button>
-  </div>
-
-
-  <!-- Desktop Carousel (3 por slide) -->
-  <div class="carousel-inner">
-  <!-- Slide 1 -->
-  <div class="carousel-item active">
-    <div class="row">
-
-      <!-- Service 1 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-           <img src="IMG/icono_1.png" alt="Valoración Odontológica">
-          </div>
-          <h3>Valoración Integral</h3>
-          <a href="valoracion.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Evaluamos tu salud oral con diagnóstico profesional y plan de tratamiento personalizado.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
+      <div class="feature">
+        <b>Atención odontológica que impulsa tu sonrisa</b>
+        Mejora tu salud oral con diagnósticos precisos y tratamientos integrales. Nos encargamos de tu bienestar para que sonrías con tranquilidad.
+      </div>
+      <div class="feature">
+        <b>Valoración personalizada y acompañamiento</b>
+        Cada paciente es único. Diseñamos planes de tratamiento a tu medida, con acompañamiento continuo y explicaciones claras en cada etapa.
+      </div>
+      <div class="feature">
+        <b>Especialistas calificados y tecnología moderna</b>
+        Profesionales certificados y equipos de última generación para brindarte precisión, comodidad y resultados confiables.
+      </div>
+      <div class="feature">
+        <b>Optimiza tiempo y costos en tu tratamiento</b>
+        Prevención y planificación inteligente que evitan procedimientos complejos y gastos innecesarios sin sacrificar calidad.
+      </div>
+      <div class="feature">
+        <b>Experiencia comprobada y pacientes satisfechos</b>
+        Nos eligen y recomiendan por nuestra atención humana, resultados visibles y compromiso con cada sonrisa.
+      </div>
+      <div class="feature">
+        <b>Agenda fácil, rápida y sin complicaciones</b>
+        Programa tu valoración en minutos y recibe atención oportuna, sin largas esperas ni procesos engorrosos.
       </div>
 
-      <!-- Service 2 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_2.png" alt="Ortodoncia">
-          </div>
-          <h3>Ortodoncia</h3>
-          <a href="ortodoncia.html" class="card-link">
-            <h3>Más información</h3>
-          </a> 
-          <div class="service-details">
-            <p>Corregimos la posición de tus dientes para una sonrisa armónica y funcional.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_3.png" alt="Estética Dental">
-          </div>
-          <h3>Estética Dental</h3>
-          <a href="estetica.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Blanqueamientos y diseño de sonrisa para mejorar tu imagen dental.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
+      <a class="cta-button" href="contact.html">Agenda tu cita <strong>HOY</strong></a>
     </div>
   </div>
-
-  <!-- Slide 2 -->
-  <div class="carousel-item">
-    <div class="row">
-
-      <!-- Service 4 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_4.png" alt="Implantes Dentales">
-          </div>
-          <h3>Implantes Dentales</h3>
-          <a href="implantes.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Reemplazamos dientes perdidos con soluciones fijas y duraderas.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 5 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_5.png" alt="Endodoncia">
-          </div>
-          <h3>Endodoncia</h3>
-          <a href="endodoncia.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Tratamiento de conducto para eliminar dolor y conservar tus dientes.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 6 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_7.png" alt="Profilaxis Dental">
-          </div>
-          <h3>Profilaxis y Prevención</h3>
-          <a href="profilaxis.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Limpiezas profesionales que previenen caries y enfermedades periodontales.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Slide 3 -->
-  <div class="carousel-item">
-    <div class="row">
-
-      <!-- Service 7 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_8.png" alt="Rehabilitación Oral">
-          </div>
-          <h3>Rehabilitación Oral</h3>
-          <a href="rehabilitacion.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Restauramos función y estética con tratamientos integrales.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 8 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_9.png" alt="Cirugía Oral">
-          </div>
-          <h3>Cirugía Oral</h3>
-          <a href="cirugia.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Procedimientos seguros con tecnología moderna.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 9 -->
-      <div class="col-lg-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="IMG/icono_10.png" alt="Odontopediatría">
-          </div>
-          <h3>Odontopediatría</h3>
-          <a href="odontopediatria.html" class="card-link">
-            <h3>Más información</h3>
-          </a>
-          <div class="service-details">
-            <p>Cuidado especializado para niños y adolescentes.</p>
-            <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-  <!-- Arrows -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
-<!-- ================= MOBILE VERSION (1 servicio por slide) ================= -->
-<div id="servicesCarouselMobile" class="carousel slide d-block d-lg-none" data-bs-ride="carousel" data-bs-wrap="true">
-    <!-- Indicators para Mobile -->
-<div class="carousel-indicators d-flex d-lg-none">
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="0" class="active"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="1"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="2"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="3"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="4"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="5"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="6"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="7"></button>
-  <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="8"></button>
-</div>
-<div class="carousel-inner">
-  <!-- Service 1 -->
-  <div class="carousel-item active">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_1.png" alt="Valoración Odontológica">
-      </div>
-      <h3>Valoración Integral</h3>
-      <a href="valoracion.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Evaluamos tu salud oral con diagnóstico profesional y plan de tratamiento personalizado.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 2 -->
-  <div class="carousel-item">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_2.png" alt="Ortodoncia">
-      </div>
-      <h3>Ortodoncia</h3>
-      <a href="ortodoncia.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Corregimos la posición dental para lograr una sonrisa armónica y funcional.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 3 -->
-  <div class="carousel-item">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_3.png" alt="Estética Dental">
-      </div>
-      <h3>Estética Dental</h3>
-      <a href="estetica.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Diseño de sonrisa y blanqueamientos para mejorar tu imagen dental.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 4 -->
-  <div class="carousel-item">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_4.png" alt="Implantes Dentales">
-      </div>
-      <h3>Implantes Dentales</h3>
-      <a href="implantes.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Reemplazamos dientes perdidos con soluciones fijas y estéticas.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 5 -->
-  <div class="carousel-item">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_5.png" alt="Endodoncia">
-      </div>
-      <h3>Endodoncia</h3>
-      <a href="endodoncia.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Tratamiento de conducto para eliminar dolor y salvar tus dientes.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 6 -->
-  <div class="carousel-item">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_7.png" alt="Profilaxis Dental">
-      </div>
-      <h3>Profilaxis y Prevención</h3>
-      <a href="profilaxis.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Limpiezas profesionales para prevenir caries y enfermedad periodontal.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 7 -->
-  <div class="carousel-item">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_8.png" alt="Rehabilitación Oral">
-      </div>
-      <h3>Rehabilitación Oral</h3>
-      <a href="rehabilitacion.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Recuperamos función y estética con tratamientos integrales.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 8 -->
-  <div class="carousel-item">
-    <div class="service-card"> 
-      <div class="service-icon">
-        <img src="IMG/icono_9.png" alt="Cirugía Oral">
-      </div>
-      <h3>Cirugía Oral</h3>
-      <a href="cirugia.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Procedimientos seguros con tecnología moderna y mínima invasión.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service 9 -->
-  <div class="carousel-item">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="IMG/icono_10.png" alt="Odontopediatría">
-      </div>
-      <h3>Odontopediatría</h3>
-      <a href="odontopediatria.html" class="card-link">
-        <h3>Más información</h3>
-      </a>
-      <div class="service-details">
-        <p>Cuidado especializado para niños y adolescentes.</p>
-        <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- Arrows -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
-
-        </div>
-        </div>
-    </div>
 </section>
 
 
+<!-- ===== SERVICIOS ============================ -->
+<section id="hire" class="py-5 snap-section">
+  <div class="main-container HireMain">
 
+    <div class="wave-top">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <h2 class="services-title">Nuestros Servicios</h2>
+    <p class="services-subtitle">La mejor atención odontológica de todo Villavicencio, a tu alcance.</p>
+
+    <div class="services-showcase">
+
+      <!-- DESKTOP CAROUSEL (3 por slide) -->
+      <div id="servicesCarouselDesktop" class="carousel slide w-100 d-none d-lg-block" data-bs-ride="carousel" data-bs-wrap="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row g-3 px-2">
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_1.png" alt="Valoración"></div>
+                  <h3>Valoración Integral</h3>
+                  <a href="valoracion.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Evaluamos tu salud oral con diagnóstico profesional y plan de tratamiento personalizado.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_2.png" alt="Ortodoncia"></div>
+                  <h3>Ortodoncia</h3>
+                  <a href="ortodoncia.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Corregimos la posición de tus dientes para una sonrisa armónica y funcional.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_3.png" alt="Estética"></div>
+                  <h3>Estética Dental</h3>
+                  <a href="estetica.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Blanqueamientos y diseño de sonrisa para mejorar tu imagen dental.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row g-3 px-2">
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_4.png" alt="Implantes"></div>
+                  <h3>Implantes Dentales</h3>
+                  <a href="implantes.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Reemplazamos dientes perdidos con soluciones fijas y duraderas.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_5.png" alt="Endodoncia"></div>
+                  <h3>Endodoncia</h3>
+                  <a href="endodoncia.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Tratamiento de conducto para eliminar dolor y conservar tus dientes.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_7.png" alt="Profilaxis"></div>
+                  <h3>Profilaxis y Prevención</h3>
+                  <a href="profilaxis.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Limpiezas profesionales que previenen caries y enfermedades periodontales.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row g-3 px-2">
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_8.png" alt="Rehabilitación"></div>
+                  <h3>Rehabilitación Oral</h3>
+                  <a href="rehabilitacion.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Restauramos función y estética con tratamientos integrales.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_9.png" alt="Cirugía"></div>
+                  <h3>Cirugía Oral</h3>
+                  <a href="cirugia.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Procedimientos seguros con tecnología moderna.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="service-card">
+                  <div class="service-icon"><img src="IMG/icono_10.png" alt="Odontopediatría"></div>
+                  <h3>Odontopediatría</h3>
+                  <a href="odontopediatria.html" class="card-link"><h3>Más información →</h3></a>
+                  <div class="service-details">
+                    <p>Cuidado especializado para niños y adolescentes.</p>
+                    <a href="contact.html" class="btn hire-now-btn">Agendar cita</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarouselDesktop" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <!-- MOBILE CAROUSEL (1 por slide) -->
+      <div id="servicesCarouselMobile" class="carousel slide w-100 d-block d-lg-none" data-bs-ride="carousel" data-bs-wrap="true">
+        <div class="carousel-indicators d-flex d-lg-none">
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="4"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="5"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="6"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="7"></button>
+          <button type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide-to="8"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active"><div class="service-card"><div class="service-icon"><img src="IMG/icono_1.png" alt="Valoración"></div><h3>Valoración Integral</h3><a href="valoracion.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Evaluamos tu salud oral con diagnóstico profesional y plan de tratamiento personalizado.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_2.png" alt="Ortodoncia"></div><h3>Ortodoncia</h3><a href="ortodoncia.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Corregimos la posición dental para lograr una sonrisa armónica y funcional.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_3.png" alt="Estética"></div><h3>Estética Dental</h3><a href="estetica.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Diseño de sonrisa y blanqueamientos para mejorar tu imagen dental.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_4.png" alt="Implantes"></div><h3>Implantes Dentales</h3><a href="implantes.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Reemplazamos dientes perdidos con soluciones fijas y estéticas.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_5.png" alt="Endodoncia"></div><h3>Endodoncia</h3><a href="endodoncia.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Tratamiento de conducto para eliminar dolor y salvar tus dientes.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_7.png" alt="Profilaxis"></div><h3>Profilaxis y Prevención</h3><a href="profilaxis.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Limpiezas profesionales para prevenir caries y enfermedad periodontal.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_8.png" alt="Rehabilitación"></div><h3>Rehabilitación Oral</h3><a href="rehabilitacion.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Recuperamos función y estética con tratamientos integrales.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_9.png" alt="Cirugía"></div><h3>Cirugía Oral</h3><a href="cirugia.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Procedimientos seguros con tecnología moderna y mínima invasión.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+          <div class="carousel-item"><div class="service-card"><div class="service-icon"><img src="IMG/icono_10.png" alt="Odontopediatría"></div><h3>Odontopediatría</h3><a href="odontopediatria.html" class="card-link"><h3>Más información →</h3></a><div class="service-details"><p>Cuidado especializado para niños y adolescentes.</p><a href="contact.html" class="btn hire-now-btn">Agendar cita</a></div></div></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 4 PASOS ============================== -->
 <section class="snaps-section">
-  <h2><span class="highlight">4 Pasos</span> <span class="bold-purple">Simples</span> Para Tu <span class="highlight-black">Sonrisa Ideal</span></h2>
-  
+  <span class="section-tag" style="color:var(--nude-dark);border-color:var(--nude);">Tu camino hacia la sonrisa ideal</span>
+  <h2>
+    <span class="highlight">4 Pasos</span>
+    <span class="bold-purple"> Simples </span>
+    Para Tu <span class="highlight-black">Sonrisa Ideal</span>
+  </h2>
+
   <div class="snaps-container">
     <div class="snap-card">
+      <div class="step-number">1</div>
       <p>Cuéntanos qué necesitas:<br><strong>evaluación, estética o tratamiento.</strong><br>Estamos listos para escucharte.</p>
       <img src="IMG/snap_1.png" alt="Paso 1">
     </div>
     <div class="divider"></div>
-
     <div class="snap-card">
+      <div class="step-number">2</div>
       <p>Agenda tu <strong>valoración profesional</strong><br>y conoce a nuestros especialistas.</p>
       <img src="IMG/snap_2.png" alt="Paso 2">
     </div>
     <div class="divider"></div>
-
     <div class="snap-card">
+      <div class="step-number">3</div>
       <p>Recibe tu <strong>plan de tratamiento</strong><br>con tiempos, costos y acompañamiento claro.</p>
       <img src="IMG/snap_3.png" alt="Paso 3">
     </div>
     <div class="divider"></div>
-
     <div class="snap-card">
+      <div class="step-number">4</div>
       <p><strong>Es momento de sonreír.</strong><br>Iniciamos tu tratamiento con tecnología y cuidado humano.</p>
       <img src="IMG/snap_4.png" alt="Paso 4">
     </div>
@@ -676,27 +448,27 @@
     <h3>¿Listo para cuidar tu sonrisa? <span class="highlight-black">Agenda en Integra Clinic</span></h3>
     <p>En <strong>Integra Clinic</strong> creemos que una buena salud oral transforma vidas.<br>
       Nuestro equipo combina experiencia, tecnología y trato humano para brindarte una atención segura, cómoda y confiable.</p>
-    <a href="contact.html" target="_blank" class="cta-button">Agendar Valoración</a>
+    <a href="contact.html" class="cta-button">Agendar Valoración</a>
   </div>
 </section>
 
 
-    <!-- Footer -->
+<!-- ===== FOOTER =============================== -->
 <footer class="footer-custom py-5">
   <div class="container">
     <div class="row justify-content-between">
+
       <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
         <div class="d-flex flex-column">
           <div class="d-flex align-items-center mb-3">
             <a href="index.html">
-              <img src="IMG/log_BL.png" alt="Integra Clinic Logo" style="max-height: 30px;">
+              <img src="IMG/log_BL.png" alt="Integra Clinic" style="max-height: 30px; filter: brightness(0) invert(1);">
             </a>
             <div class="ms-3 d-flex gap-2">
               <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
               <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
-          
           <div class="contact-info">
             <p class="mb-2">Clínica Integra · Servicios Odontológicos</p>
             <p class="mb-2">contacto@integraclinic.com</p>
@@ -705,194 +477,45 @@
         </div>
       </div>
 
-      <!-- Services -->
       <div class="col-6 col-sm-3 col-md-2">
-        <h6><a class="nav-link" href="">Servicios</a></h6>
+        <h6>Servicios</h6>
         <ul>
-          <li><a class="nav-link" href="">Nuestros Tratamientos</a></li>
-          <li><a class="nav-link" href="">Especialidades</a></li>
-          <li><a class="nav-link" href="">Planes y Valoración</a></li>
+          <li><a href="">Nuestros Tratamientos</a></li>
+          <li><a href="">Especialidades</a></li>
+          <li><a href="">Planes y Valoración</a></li>
         </ul>
       </div>
 
-      <!-- About Us -->
       <div class="col-6 col-sm-3 col-md-2">
-        <h6><a class="nav-link" href="">Nosotros</a></h6>
+        <h6>Nosotros</h6>
         <ul class="list-unstyled">
           <li><a href="">Términos y Condiciones</a></li>
           <li><a href="">Política de Privacidad</a></li>
         </ul>
-        <a href="" target="_blank" class="btn-get-hired mt-2">Agendar Cita</a>
+        <a href="contact.html" class="btn-get-hired mt-2">Agendar Cita</a>
       </div>
+
     </div>
   </div>
 </footer>
 
 
+<!-- Botón WhatsApp -->
+<a href="https://wa.me/+13073339811?text=Hola,%20estoy%20interesado%20en%20sus%20servicios" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp fa-2x"></i>
+</a>
 
-    <!-- Botón de WhatsApp -->
-    <a href="https://wa.me/+13073339811?text=Hola,%20estoy%20interesado%20en%20sus%20servicios" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp fa-2x"></i>
-    </a>
-
-    <!-- Botón de llamada -->
-    <a href="tel:+13073339811" class="call-btn">
-        <i class="fas fa-phone fa-2x"></i>
-    </a>
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="JS/SVBackEnd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cmm9x1v7m048ypd1p3dzu9dey"></script>
-    <iframe	style="width: 400px; height: 600px;" src="https://app.fastbots.ai/embed/cmm9x1v7m048ypd1p3dzu9dey"></iframe>
-
-    <!-- GLOBAL SERVICE POPUP: add once, at the end of the page (before </body>) -->
-<!--<div id="service-popup" class="service-popup" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="popup-content" role="document">
-    <button class="close-btn" aria-label="Close">&times;</button>
-    <div class="popup-inner">
-      <h2 id="popup-title">Service Title</h2>
-      <p id="popup-description-short">Short service description goes here...</p>
-      <div id="popup-description-long" class="popup-description-long">
-        <p>Full detailed service description goes here...</p>
-      </div>
-
-      
-      <div class="popup-image">
-        <img id="popup-img" src="IMG/pareja_1.png" alt="Service illustration" />
-      </div>
-
-      
-      <div class="popup-slogan">
-        <p id="popup-slogan">Let’s start thriving your business now!</p>
-      </div>
-
-      <a id="popup-link" href="contact.html" class="btn hire-now-btn">Hire Now</a>
-    </div>
-  </div>
-</div>
+<!-- Botón llamada -->
+<a href="tel:+13073339811" class="call-btn">
+    <i class="fas fa-phone fa-2x"></i>
+</a>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const popup = document.getElementById('service-popup');
-  if (!popup) return;
-
-  const titleEl = document.getElementById('popup-title');
-  const descShortEl = document.getElementById('popup-description-short');
-  const descLongEl = document.getElementById('popup-description-long');
-  const imgEl = document.getElementById('popup-img');
-  const sloganEl = document.getElementById('popup-slogan');
-  const linkEl  = document.getElementById('popup-link');
-  const closeEl = popup.querySelector('.close-btn');
-
-  const serviceDescriptions = {
-    "Administrative Assistance": {
-      short: "We handle your daily tasks efficiently so you can focus on growing your business.",
-      long: "From scheduling and data entry to document management and reporting, our virtual assistants provide reliable, detail-oriented support. We help you reclaim valuable hours so you can concentrate on scaling your business and strengthening client relationships.",
-      img: "IMG/pareja_1.png",
-      slogan: "Boost productivity with reliable support today!"
-    },
-    "Customer Support": {
-      short: "We provide friendly and professional support to keep your customers satisfied.",
-      long: "Our trained support team ensures your clients feel heard and valued. We handle inquiries, troubleshooting, and follow-ups with empathy and precision, enhancing loyalty and creating positive brand experiences 24/7.",
-      img: "IMG/pareja_1.png",
-      slogan: "Turn every interaction into customer loyalty!"
-    },
-    "Digital Marketing": {
-      short: "We create strategies that boost your online presence and drive real results.",
-      long: "From SEO and social media management to paid campaigns and content strategy, our digital marketing experts design data-driven solutions that maximize reach, engagement, and conversion for your brand.",
-      img: "IMG/pareja_1.png",
-      slogan: "Let’s grow your digital footprint now!"
-    },
-    "Legal Assistance": {
-      short: "We offer legal support to help you make decisions with confidence and compliance.",
-      long: "Our specialists provide document review, contract drafting, compliance monitoring, and risk analysis. With SNAPVAS, you get clear, reliable guidance that protects your business and empowers informed decision-making.",
-      img: "IMG/pareja_1.png",
-      slogan: "Protect your business with confidence!"
-    },
-    "Logistics": {
-      short: "We optimize your supply chain to ensure smooth and cost-effective operations.",
-      long: "We manage scheduling, inventory coordination, shipment tracking, and vendor communications. By optimizing your operations, we reduce costs, increase efficiency, and keep your business moving without interruptions.",
-      img: "IMG/pareja_1.png",
-      slogan: "Move smarter, faster, better with us!"
-    },
-    "Training Support": {
-      short: "We design and deliver training programs to empower your team's performance.",
-      long: "Whether onboarding new hires or upskilling existing staff, we build customized training materials, e-learning modules, and support sessions that ensure knowledge retention and measurable performance improvements.",
-      img: "IMG/pareja_1.png",
-      slogan: "Empower your team, empower your growth!"
-    },
-    "Staffing and Recruiting": {
-      short: "We connect you with the right talent to strengthen and scale your business.",
-      long: "Our recruiting experts source, screen, and onboard candidates aligned with your culture and goals. From temporary roles to long-term hires, SNAPVAS delivers top talent so your business grows with the right team in place.",
-      img: "IMG/pareja_1.png",
-      slogan: "Find the right talent, at the right time!"
-    },
-    "Devops & Secops": {
-      short: "We streamline development and secure your systems for maximum efficiency.",
-      long: "We integrate continuous deployment pipelines, automate workflows, and enhance system security. With SNAPVAS, you achieve faster releases, safer operations, and peace of mind knowing your infrastructure is protected.",
-      img: "IMG/pareja_1.png",
-      slogan: "Secure. Scale. Succeed with SNAPVAS!"
-    },
-    "Graphic Designer": {
-      short: "We transform brand vision into visual strategy, crafting designs that drive growth.",
-      long: "Our designers create compelling visuals for branding, websites, and campaigns. From sleek logos to high-impact graphics, we craft visuals that don’t just look great—they communicate your message and capture your audience.",
-      img: "IMG/pareja_1.png",
-      slogan: "Make your brand unforgettable with design!"
-    }
-  };
-
-  function openFromCard(card) {
-    if (!card) return;
-    const title = card.querySelector('h3')?.textContent?.trim() || 'Service';
-    const data = serviceDescriptions[title] || { short: "", long: "", img: "", slogan: "" };
-
-    titleEl.textContent = title;
-    descShortEl.textContent = data.short;
-    descLongEl.innerHTML = `<p>${data.long}</p>`;
-    imgEl.setAttribute("src", data.img);
-    sloganEl.textContent = data.slogan;
-    linkEl.setAttribute("href", "contact.html");
-
-    popup.style.display = 'flex';
-    popup.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    closeEl.focus();
-  }
-
-  function closePopup() {
-    popup.style.display = 'none';
-    popup.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('click', function (e) {
-    const hireBtn = e.target.closest('.hire-now-btn');
-    if (hireBtn) {
-      e.preventDefault();
-      const card = hireBtn.closest('.service-card');
-      if (card) openFromCard(card);
-      return;
-    }
-    const card = e.target.closest('.service-card');
-    if (card && !e.target.closest('a, button')) {
-      openFromCard(card);
-      return;
-    }
-    if (e.target === popup) closePopup();
-  });
-
-  closeEl.addEventListener('click', closePopup);
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && popup.style.display === 'flex') closePopup();
-  });
-});
-</script>-->
-
-
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="JS/SVBackEnd.js"></script>
+<script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cmm9x1v7m048ypd1p3dzu9dey"></script>
 
 </body>
 </html>
