@@ -27,7 +27,7 @@ body {
     background-color: var(--cream);
     color: var(--charcoal);
     line-height: 1.7;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -193,7 +193,6 @@ h1, h2, h3 {
     .navbar-nav {
         display: block !important;
         padding: 2rem 1.5rem;
-        overflow-y: auto;
         height: 100%;
     }
     .nav-item {
