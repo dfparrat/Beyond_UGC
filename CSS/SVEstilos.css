@@ -782,6 +782,130 @@ h1, h2, h3 {
     #servicesCarouselMobile { padding-bottom: 40px; }
 }
 
+/* ===== SECCIÓN DE TESTIMONIOS ===== */
+.testimonials-section {
+    padding: 80px 0;
+    background: var(--white, #ffffff);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card.featured {
+    border-left: 4px solid #ffb347; /* Toque de color cálido para destacar */
+    background: #fefaf5;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.avatar-icon {
+    font-size: 3rem;
+    color: #d4c5b0;
+}
+
+.user-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.stars {
+    color: #ffb347;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.platform-icon {
+    margin-left: auto;
+    font-size: 1.4rem;
+    color: #0084ff;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+.card-footer small {
+    color: #999;
+    font-size: 0.75rem;
+}
+
+.card-footer i {
+    margin-right: 5px;
+    color: #ff6b6b;
+}
+
+.testimonials-cta {
+    margin-top: 60px;
+}
+
+.testimonials-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 50px 20px;
+    }
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 /* === SECCIÓN 4 PASOS ============================ */
 .snaps-section {
     text-align: center;
