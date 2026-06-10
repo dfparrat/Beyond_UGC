@@ -24,6 +24,20 @@
     });
 })();
 
+// Cambiar estilo del navbar al hacer scroll (optimizado)
+let scrollTimeout;
+window.addEventListener('scroll', function() {
+  if (scrollTimeout) return;
+  scrollTimeout = requestAnimationFrame(() => {
+    const navbar = document.querySelector('.navbar-custom');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    scrollTimeout = null;
+  });
+});
 
 // === POPUP FUNCTIONALITY ======================
 document.addEventListener('DOMContentLoaded', function () {
