@@ -219,3 +219,165 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ===== CARRUSEL AUTOMÁTICO DE FEATURES =====
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('featuresCarousel');
+  const dotsContainer = document.getElementById('carouselDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  
+  if (!carousel) return;
+  
+  const features = Array.from(carousel.children);
+  const totalFeatures = features.length;
+  let currentIndex = 0;
+  let autoSlideInterval;
+  let isMobile = window.innerWidth < 768;
+  let itemsPerView = getItemsPerView();
+  let totalSlides = Math.ceil(totalFeatures / itemsPerView);
+  
+  // Determinar cuántos items mostrar según el ancho de pantalla
+  function getItemsPerView() {
+    const width = window.innerWidth;
+    if (width >= 1024) return 3;
+    if (width >= 768) return 2;
+    return 1;
+  }
+  
+  // Configurar el ancho de los slides
+  function updateCarousel() {
+    itemsPerView = getItemsPerView();
+    totalSlides = Math.ceil(totalFeatures / itemsPerView);
+    
+    // Ajustar el ancho de cada feature
+    const featureWidth = carousel.parentElement.offsetWidth / itemsPerView;
+    features.forEach(feature => {
+      feature.style.flex = `0 0 ${featureWidth}px`;
+    });
+    
+    // Asegurar que el índice actual sea válido
+    if (currentIndex >= totalSlides) {
+      currentIndex = totalSlides - 1;
+    }
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    }
+    
+    updateCarouselPosition();
+    updateDots();
+  }
+  
+  // Mover el carrusel a la posición actual
+  function updateCarouselPosition() {
+    const slideWidth = carousel.parentElement.offsetWidth;
+    const translateX = -currentIndex * slideWidth;
+    carousel.style.transform = `translateX(${translateX}px)`;
+  }
+  
+  // Crear puntos indicadores
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => {
+        stopAutoSlide();
+        goToSlide(i);
+        startAutoSlide();
+      });
+      dotsContainer.appendChild(dot);
+    }
+    updateDots();
+  }
+  
+  // Actualizar punto activo
+  function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+  
+  // Ir a un slide específico
+  function goToSlide(index) {
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    currentIndex = index;
+    updateCarouselPosition();
+    updateDots();
+  }
+  
+  // Siguiente slide
+  function nextSlide() {
+    if (currentIndex < totalSlides - 1) {
+      goToSlide(currentIndex + 1);
+    } else {
+      // Volver al inicio (efecto infinito)
+      goToSlide(0);
+    }
+  }
+  
+  // Slide anterior
+  function prevSlide() {
+    if (currentIndex > 0) {
+      goToSlide(currentIndex - 1);
+    } else {
+      // Ir al final (efecto infinito)
+      goToSlide(totalSlides - 1);
+    }
+  }
+  
+  // Autoplay
+  function startAutoSlide() {
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+      nextSlide();
+    }, 5000); // Cambiar cada 5 segundos
+  }
+  
+  function stopAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
+  }
+  
+  // Event listeners para botones
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      stopAutoSlide();
+      prevSlide();
+      startAutoSlide();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+    });
+  }
+  
+  // Pausar autoplay al hacer hover
+  carousel.addEventListener('mouseenter', stopAutoSlide);
+  carousel.addEventListener('mouseleave', startAutoSlide);
+  
+  // Recalcular al redimensionar ventana
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateCarousel();
+      startAutoSlide();
+    }, 250);
+  });
+  
+  // Inicializar
+  updateCarousel();
+  createDots();
+  startAutoSlide();
+});
