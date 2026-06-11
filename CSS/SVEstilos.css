@@ -246,16 +246,18 @@ h1, h2, h3 {
   --radius-card: 16px;
 }
 
-/* ── Hero layout ── */
+/* ── Hero SECTION ── */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   align-items: center;
-  padding: 100px 48px 60px;
+  padding: 100px 6vw 60px;
   gap: 40px;
+  box-sizing: border-box;
 }
 
 /* ── Left column ── */
