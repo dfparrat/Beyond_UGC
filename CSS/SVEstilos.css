@@ -312,14 +312,18 @@ h1, h2, h3 {
 /* Divider */
 .hero .divider {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 12px;
   margin-bottom: 28px;
+  width: 100%;
+  background: none;
+  border: none;
+  height: auto;
 }
 
-.hero .divider::before,
-.hero .divider::after {
-  content: '';
+.hero .divider-line {
+  display: block;
   flex: 1;
   max-width: 120px;
   height: 1px;
@@ -327,14 +331,14 @@ h1, h2, h3 {
   opacity: 0.4;
 }
 
-.divider-label {
+.hero .divider-label {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--mocha);
   white-space: nowrap;
+  flex-shrink: 0;
 }
-
 /* Feature list */
 .hero .features {
   list-style: none;
