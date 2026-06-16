@@ -894,40 +894,64 @@ h1, h2, h3 {
 }
 
 /* ===== CARRUSEL DE FEATURES ===== */
+/* ===== CARRUSEL DE FEATURES - VERSIÓN CORREGIDA ===== */
 .features-carousel-container {
   position: relative;
   width: 100%;
   margin: 30px 0;
   overflow: hidden;
   border-radius: 12px;
+  padding: 0;
 }
 
 .features-carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .feature {
-  flex: 0 0 100%;
-  padding: 20px;
+  flex: 0 0 calc(33.333% - 20px); /* 3 columnas con gap de 20px */
+  padding: 15px 18px;
   background: #f9f9f9;
   border-radius: 12px;
   box-sizing: border-box;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow-y: auto;
+}
+
+/* Imagen dentro de la tarjeta */
+.feature img {
+  max-width: 100%;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .feature b {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-bottom: 10px;
   color: #333;
 }
 
 .feature p {
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #666;
+  font-size: 0.85rem;
+  overflow-y: auto;
 }
 
 /* Puntos indicadores */
@@ -936,7 +960,6 @@ h1, h2, h3 {
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
-  padding: 10px 0;
 }
 
 .dot {
@@ -967,11 +990,11 @@ h1, h2, h3 {
   border-radius: 50%;
   cursor: pointer;
   font-size: 18px;
-  transition: all 0.3s ease;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .carousel-nav:hover {
@@ -979,164 +1002,21 @@ h1, h2, h3 {
   transform: translateY(-50%) scale(1.1);
 }
 
-.prev {
-  left: 10px;
-}
+.prev { left: 10px; }
+.next { right: 10px; }
 
-.next {
-  right: 10px;
-}
-
-/* Ocultar botones en móviles muy pequeños (opcional) */
-@media (max-width: 480px) {
-  .carousel-nav {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
+/* Responsive: en móviles mostrar 1 sola tarjeta */
+@media (max-width: 767px) {
+  .feature {
+    flex: 0 0 calc(100% - 20px);
   }
 }
 
-/* Ajustes para pantallas grandes (opcional - mostrar varios features) */
-@media (min-width: 768px) {
+/* Ajuste opcional para tablets (2 columnas) - si lo deseas, puedes habilitar */
+@media (min-width: 768px) and (max-width: 1023px) {
   .feature {
     flex: 0 0 calc(50% - 20px);
-    margin: 0 10px;
   }
-  
-  .features-carousel {
-    gap: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .feature {
-    flex: 0 0 calc(33.333% - 20px);
-    margin: 0 10px;
-  }
-}
-
-/* ===== SECCIÓN DE TESTIMONIOS ===== */
-.testimonials-section {
-    padding: 80px 0;
-    background: var(--white, #ffffff);
-    font-family: 'DM Sans', sans-serif;
-}
-
-.section-header {
-    margin-bottom: 50px;
-}
-
-.section-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-top: 15px;
-}
-
-.section-subtitle {
-    color: #666;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 15px auto 0;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.testimonial-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #f0f0f0;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-card.featured {
-    border-left: 4px solid #ffb347; /* Toque de color cálido para destacar */
-    background: #fefaf5;
-}
-
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-.avatar-icon {
-    font-size: 3rem;
-    color: #d4c5b0;
-}
-
-.user-info h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.stars {
-    color: #ffb347;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-}
-
-.platform-icon {
-    margin-left: auto;
-    font-size: 1.4rem;
-    color: #0084ff;
-}
-
-.testimonial-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #2c2c2c;
-    margin-bottom: 20px;
-    font-style: normal;
-}
-
-.card-footer small {
-    color: #999;
-    font-size: 0.75rem;
-}
-
-.card-footer i {
-    margin-right: 5px;
-    color: #ff6b6b;
-}
-
-.testimonials-cta {
-    margin-top: 60px;
-}
-
-.testimonials-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #2c2c2c;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .testimonials-section {
-        padding: 50px 20px;
-    }
-    .section-header h2 {
-        font-size: 2rem;
-    }
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
 }
 
 /* === SECCIÓN 4 PASOS ============================ */
