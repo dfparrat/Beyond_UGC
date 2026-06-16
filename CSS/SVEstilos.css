@@ -604,6 +604,29 @@ h1, h2, h3 {
 }
 
 /* ===== CARRUSEL DE FEATURES - VERSIÓN CORREGIDA ===== */
+.text-section {
+  text-align: center;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.foreground {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .features-carousel-container {
   position: relative;
   width: 100%;
