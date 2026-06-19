@@ -929,88 +929,256 @@ section {
 }
 
 /* === SECCIÓN 4 PASOS ============================ */
-.snaps-section {
-    text-align: center;
-    padding: 6rem 2rem 0;
-    background: var(--cream);
-}
-.snaps-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-bottom: 4rem;
-    color: var(--charcoal);
-}
-.highlight { color: var(--nude-dark); font-style: italic; }
-.highlight-black { color: var(--charcoal); font-style: italic; }
-.bold-purple { color: var(--charcoal); font-weight: 700; }
+        .snaps-section {
+            text-align: center;
+            padding: 6rem 2rem 0;
+            background: var(--cream);
+        }
+        .snaps-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 4rem;
+            color: var(--charcoal);
+        }
+        .highlight {
+            color: var(--nude-dark);
+            font-style: italic;
+        }
+        .highlight-black {
+            color: var(--charcoal);
+            font-style: italic;
+        }
+        .bold-purple {
+            color: var(--charcoal);
+            font-weight: 700;
+        }
+        .section-tag {
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border: 1px solid var(--nude);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
 
-.snaps-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto 0;
-}
-.snap-card {
-    flex: 1 1 200px;
-    max-width: 240px;
-    text-align: center;
-    padding: 1.5rem 1rem;
-}
-.snap-card p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.92rem;
-    margin-bottom: 1.2rem;
-    color: var(--warm-gray);
-    line-height: 1.6;
-}
-.snap-card img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    margin: 0 auto;
-    opacity: 0.85;
-}
-.snap-card h3 {
-    font-size: 1rem;
-    color: var(--charcoal);
-    font-weight: 600;
-}
+        /* ----- Carousel wrapper (full width) ----- */
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-.divider {
-    width: 1px;
-    height: 180px;
-    background: var(--nude);
-    margin: 0;
-    align-self: center;
-}
+        /* ----- Snaps container (the track) ----- */
+        .snaps-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            flex-wrap: nowrap;
+            width: 100%;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+            margin: 0;
+        }
 
-.cta-container {
-    background: var(--white);
-    padding: 5rem 2rem 5rem;
-    margin-top: 4rem;
-    border-top: 1px solid var(--border);
-}
-.cta-container h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    color: var(--charcoal);
-}
-.cta-container p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    max-width: 650px;
-    margin: 0 auto 2.5rem;
-    color: var(--warm-gray);
-    line-height: 1.7;
-}
+        /* ----- Each snap card ----- */
+        .snap-card {
+            flex: 1 1 0;           /* equal width on desktop */
+            min-width: 0;
+            text-align: center;
+            padding: 1.5rem 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--cream);  /* match background */
+        }
+        .snap-card p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.92rem;
+            margin-bottom: 1.2rem;
+            color: var(--warm-gray);
+            line-height: 1.6;
+        }
+        .snap-card p strong {
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+        .snap-card img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            margin: 0 auto;
+            opacity: 0.85;
+        }
+        .snap-card .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--nude-dark);
+            margin-bottom: 0.5rem;
+        }
 
+        /* ----- Dividers (visible on desktop) ----- */
+        .divider {
+            width: 1px;
+            height: 180px;
+            background: var(--nude);
+            margin: 0;
+            flex-shrink: 0;
+            align-self: center;
+        }
 
+        /* ----- Carousel controls (hidden on desktop) ----- */
+        .carousel-btn {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(47, 46, 43, 0.6);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .carousel-btn:hover {
+            background: rgba(47, 46, 43, 0.85);
+        }
+        .carousel-btn.prev {
+            left: 10px;
+        }
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+        /* ----- Dots (hidden on desktop) ----- */
+        .carousel-dots {
+            display: none;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 1.8rem;
+            padding-bottom: 0.5rem;
+        }
+        .carousel-dots .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--nude);
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            padding: 0;
+        }
+        .carousel-dots .dot.active {
+            background: var(--charcoal);
+            transform: scale(1.2);
+        }
+
+        /* ----- CTA (your original) ----- */
+        .cta-container {
+            background: var(--white);
+            padding: 5rem 2rem 5rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+        }
+        .cta-container h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: var(--charcoal);
+        }
+        .cta-container p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--charcoal);
+            color: #fff;
+            padding: 0.9rem 2.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.25s;
+        }
+        .cta-button:hover {
+            background: #3d3c38;
+        }
+
+        /* ----- Responsive: Mobile Carousel (≤768px) ----- */
+        @media (max-width: 768px) {
+            .snaps-section {
+                padding: 3rem 1rem 0;
+            }
+            .snaps-section h2 {
+                font-size: 2.2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .carousel-wrapper {
+                max-width: 100%;
+            }
+
+            .snaps-container {
+                justify-content: flex-start;
+                margin: 0;
+            }
+
+            .snap-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 1rem 1.5rem;
+                background: var(--cream);
+            }
+            .snap-card img {
+                width: 180px;
+                height: 180px;
+            }
+
+            /* hide dividers on mobile */
+            .divider {
+                display: none;
+            }
+
+            /* show buttons & dots */
+            .carousel-btn {
+                display: flex;
+            }
+            .carousel-dots {
+                display: flex;
+            }
+        }
+
+        /* extra small screens */
+        @media (max-width: 480px) {
+            .snap-card img {
+                width: 150px;
+                height: 150px;
+            }
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1.3rem;
+            }
+        }
 /* === SNAP SECTION HERO TAG ===================== */
 .main-container.HireMain {
     width: 100%;

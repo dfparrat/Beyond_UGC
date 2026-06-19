@@ -654,46 +654,65 @@
 
 <!-- ===== 4 sERVICES ============================== -->
 <section class="snaps-section">
-  <span class="section-tag" style="color:var(--nude-dark);border-color:var(--nude);">Best reviews in the market</span>
-  <h2>
-    <span class="highlight">4 Areas</span>
-    <span class="bold-purple"> Choose </span>
-    your Area <span class="highlight-black">of INterest</span>
-  </h2>
+        <span class="section-tag" style="color:var(--nude-dark);border-color:var(--nude);">Best reviews in the market</span>
+        <h2>
+            <span class="highlight">4 Areas</span>
+            <span class="bold-purple"> Choose </span>
+            your Area <span class="highlight-black">of Interest</span>
+        </h2>
 
-  <div class="snaps-container">
-    <div class="snap-card">
-      <div class="step-number">1</div>
-      <p>Beauty.<br><strong>Text.</strong><br>Text.</p>
-      <img src="Blank" alt="Paso 1">
-    </div>
-    <div class="divider"></div>
-    <div class="snap-card">
-      <div class="step-number">2</div>
-      <p>Haircare.<br><strong>Text</strong><br>Ipsu lorem.</p>
-      <img src="Blank" alt="Paso 2">
-    </div>
-    <div class="divider"></div>
-    <div class="snap-card">
-      <div class="step-number">3</div>
-      <p>Tech.<br><strong>Text</strong><br>Ipsu lorem.</p>
-      <img src="Blank" alt="Paso 3">
-    </div>
-    <div class="divider"></div>
-    <div class="snap-card">
-      <div class="step-number">4</div>
-      <p><strong>Wellness.<br></strong><br>ipso lorem.</p>
-      <img src="Blank" alt="Paso 4">
-    </div>
-  </div>
+        <!-- Carousel Wrapper -->
+        <div class="carousel-wrapper" id="carouselWrapper">
+            <!-- Track -->
+            <div class="snaps-container" id="snapsContainer">
+                <!-- Card 1 -->
+                <div class="snap-card" data-index="0">
+                    <div class="step-number">1</div>
+                    <p><strong>Beauty.</strong><br>Text.<br>Ipsu lorem.</p>
+                    <img src="IMG/beauty1.png" alt="Paso 1">
+                </div>
+                <div class="divider"></div>
 
-  <div class="cta-container">
-    <h3>Ready for this? <span class="highlight-black">Book us now!</span></h3>
-    <p>En <strong>BeyondUGC</strong> Text.<br>
-      ipso lorem.</p>
-    <a href="contact.html" class="cta-button">Agendar Valoración</a>
-  </div>
-</section>
+                <!-- Card 2 -->
+                <div class="snap-card" data-index="1">
+                    <div class="step-number">2</div>
+                    <p><strong>Haircare.</strong><br>Text<br>Ipsu lorem.</p>
+                    <img src="IMG/haircare1.png" alt="Paso 2">
+                </div>
+                <div class="divider"></div>
+
+                <!-- Card 3 -->
+                <div class="snap-card" data-index="2">
+                    <div class="step-number">3</div>
+                    <p><strong>Tech.</strong><br>Text<br>Ipsu lorem.</p>
+                    <img src="IMG/tech1.png" alt="Paso 3">
+                </div>
+                <div class="divider"></div>
+
+                <!-- Card 4 -->
+                <div class="snap-card" data-index="3">
+                    <div class="step-number">4</div>
+                    <p><strong>Wellness.</strong><br>Text<br>ipso lorem.</p>
+                    <img src="IMG/wellness1.png" alt="Paso 4">
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
+            <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">›</button>
+        </div>
+
+        <!-- Dots -->
+        <div class="carousel-dots" id="carouselDots"></div>
+
+        <!-- CTA Section (unchanged) -->
+        <div class="cta-container">
+            <h3>Ready for this? <span class="highlight-black">Book us now!</span></h3>
+            <p>En <strong>BeyondUGC</strong> Text.<br>
+                ipso lorem.</p>
+            <a href="contact.html" class="cta-button">Agendar Valoración</a>
+        </div>
+    </section>
 
 
 <!-- ===== FOOTER =============================== -->
