@@ -862,13 +862,26 @@ section {
 #moresnap {
   display: grid;
   grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
-  align-items: center;
+  align-items: start;
   gap: 3rem;
 }
 
 #moresnap .image-section,
 #moresnap .text-section {
   min-width: 0;
+}
+
+#moresnap .image-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#moresnap .image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 #moresnap .features-carousel-container {
