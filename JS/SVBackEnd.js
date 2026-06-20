@@ -244,12 +244,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (!carousel || !carouselContainer || !dotsContainer) return;
   
-  const features = Array.from(carousel.children);
-  const totalFeatures = features.length;
+  const originalFeatures = Array.from(carousel.children).map(feature => feature.cloneNode(true));
+  let features = [];
+  let totalFeatures = 0;
   let currentIndex = 0;
   let autoSlideInterval;
   let itemsPerView = getItemsPerView();
   let totalSlides = Math.ceil(totalFeatures / itemsPerView);
+  let renderedItemsPerView = null;
   
   // Determinar cuántos items mostrar según el ancho de pantalla
   function getItemsPerView() {
@@ -258,10 +260,43 @@ document.addEventListener('DOMContentLoaded', function() {
     if (width >= 768) return 2;
     return 1;
   }
+
+  function rebuildCarousel() {
+    const desiredItemsPerView = getItemsPerView();
+    const cloneCount = desiredItemsPerView > 1
+      ? (desiredItemsPerView - (originalFeatures.length % desiredItemsPerView)) % desiredItemsPerView
+      : 0;
+
+    carousel.innerHTML = '';
+
+    originalFeatures.forEach(feature => {
+      carousel.appendChild(feature.cloneNode(true));
+    });
+
+    for (let index = 0; index < cloneCount; index++) {
+      carousel.appendChild(originalFeatures[index].cloneNode(true));
+    }
+
+    features = Array.from(carousel.children);
+    totalFeatures = features.length;
+    renderedItemsPerView = desiredItemsPerView;
+    totalSlides = Math.ceil(totalFeatures / itemsPerView);
+
+    if (currentIndex >= totalSlides) {
+      currentIndex = totalSlides - 1;
+    }
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    }
+  }
   
   // Configurar el ancho de los slides
   function updateCarousel() {
     itemsPerView = getItemsPerView();
+    const shouldRebuild = renderedItemsPerView !== itemsPerView;
+    if (shouldRebuild) {
+      rebuildCarousel();
+    }
     totalSlides = Math.ceil(totalFeatures / itemsPerView);
     
     // Ajustar el ancho de cada feature
@@ -280,6 +315,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     updateCarouselPosition();
+    if (shouldRebuild) {
+      createDots();
+    }
     updateDots();
   }
   
@@ -392,6 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Inicializar
+  rebuildCarousel();
   updateCarousel();
   createDots();
   startAutoSlide();
