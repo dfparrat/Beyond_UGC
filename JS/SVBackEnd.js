@@ -234,20 +234,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== CARRUSEL AUTOMÁTICO DE FEATURES =====
+// ===== CARRUSEL AUTOMÁTICO DE FEATURES/TESTIMONI =====
 document.addEventListener('DOMContentLoaded', function() {
   const carousel = document.getElementById('featuresCarousel');
-  const dotsContainer = document.getElementById('carouselDots');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+  const carouselContainer = carousel ? carousel.closest('.features-carousel-container') : null;
+  const dotsContainer = document.getElementById('featuresCarouselDots');
+  const prevBtn = document.getElementById('featuresPrevBtn');
+  const nextBtn = document.getElementById('featuresNextBtn');
   
-  if (!carousel) return;
+  if (!carousel || !carouselContainer || !dotsContainer) return;
   
   const features = Array.from(carousel.children);
   const totalFeatures = features.length;
   let currentIndex = 0;
   let autoSlideInterval;
-  let isMobile = window.innerWidth < 768;
   let itemsPerView = getItemsPerView();
   let totalSlides = Math.ceil(totalFeatures / itemsPerView);
   
@@ -265,9 +265,10 @@ document.addEventListener('DOMContentLoaded', function() {
     totalSlides = Math.ceil(totalFeatures / itemsPerView);
     
     // Ajustar el ancho de cada feature
-    const featureWidth = carousel.parentElement.offsetWidth / itemsPerView;
+    const featureWidth = carouselContainer.clientWidth / itemsPerView;
     features.forEach(feature => {
       feature.style.flex = `0 0 ${featureWidth}px`;
+      feature.style.maxWidth = `${featureWidth}px`;
     });
     
     // Asegurar que el índice actual sea válido
@@ -284,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Mover el carrusel a la posición actual
   function updateCarouselPosition() {
-    const slideWidth = carousel.parentElement.offsetWidth;
+    const slideWidth = carouselContainer.clientWidth;
     const translateX = -currentIndex * slideWidth;
     carousel.style.transform = `translateX(${translateX}px)`;
   }
@@ -307,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Actualizar punto activo
   function updateDots() {
-    const dots = document.querySelectorAll('.dot');
+    const dots = dotsContainer.querySelectorAll('.dot');
     dots.forEach((dot, index) => {
       if (index === currentIndex) {
         dot.classList.add('active');
@@ -377,8 +378,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Pausar autoplay al hacer hover
-  carousel.addEventListener('mouseenter', stopAutoSlide);
-  carousel.addEventListener('mouseleave', startAutoSlide);
+  carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+  carouselContainer.addEventListener('mouseleave', startAutoSlide);
   
   // Recalcular al redimensionar ventana
   let resizeTimeout;
@@ -396,101 +397,15 @@ document.addEventListener('DOMContentLoaded', function() {
   startAutoSlide();
 });
 
-
-    // === CARRUSEL INFINITO (CICLO SIN FIN) ===
-(function() {
-  const carousel = document.getElementById('featuresCarousel');
-  const dotsContainer = document.getElementById('carouselDots');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  if (!carousel) return;
-
-  let slides = Array.from(carousel.children);
-  const visibleCount = 3;               // 3 tarjetas visibles
-  const slidePercent = 100 / visibleCount; // 33.333% por cada tarjeta
-
-  // Clonar para efecto infinito (clonamos los primeros y últimos 3)
-  const firstClones = slides.slice(0, visibleCount).map(s => s.cloneNode(true));
-  const lastClones = slides.slice(-visibleCount).map(s => s.cloneNode(true));
-  lastClones.reverse().forEach(clone => carousel.insertBefore(clone, carousel.firstChild));
-  firstClones.forEach(clone => carousel.appendChild(clone));
-
-  slides = Array.from(carousel.children);
-  const totalSlides = slides.length;
-  let currentIndex = visibleCount;      // empezamos en el primer slide real
-  let autoInterval = null;
-  const AUTO_DELAY = 5000;
-
-  function moveToSlide(index, transition = true) {
-    if (transition) carousel.style.transition = 'transform 0.5s ease-in-out';
-    else carousel.style.transition = 'none';
-    carousel.style.transform = `translateX(-${index * slidePercent}%)`;
-    currentIndex = index;
-    updateDots();
-
-    // Lógica de loop infinito
-    if (currentIndex >= totalSlides - visibleCount) {
-      setTimeout(() => {
-        carousel.style.transition = 'none';
-        const newIndex = visibleCount + (currentIndex - (totalSlides - visibleCount));
-        moveToSlide(newIndex, false);
-      }, 500);
-    } else if (currentIndex < visibleCount) {
-      setTimeout(() => {
-        carousel.style.transition = 'none';
-        const newIndex = totalSlides - (visibleCount * 2) + currentIndex;
-        moveToSlide(newIndex, false);
-      }, 500);
-    }
-  }
-
-  function nextSlide() { stopAuto(); moveToSlide(currentIndex + 1); startAuto(); }
-  function prevSlide() { stopAuto(); moveToSlide(currentIndex - 1); startAuto(); }
-
-  function updateDots() {
-    const originalCount = totalSlides - (visibleCount * 2);
-    let originalIndex = currentIndex - visibleCount;
-    if (originalIndex < 0) originalIndex = originalCount + originalIndex;
-    if (originalIndex >= originalCount) originalIndex = originalIndex - originalCount;
-    document.querySelectorAll('.dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === originalIndex);
-    });
-  }
-
-  // Generar puntos
-  const realCount = totalSlides - (visibleCount * 2);
-  for (let i = 0; i < realCount; i++) {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => { stopAuto(); moveToSlide(i + visibleCount); startAuto(); });
-    dotsContainer.appendChild(dot);
-  }
-
-  prevBtn.addEventListener('click', prevSlide);
-  nextBtn.addEventListener('click', nextSlide);
-
-  function startAuto() { if (AUTO_DELAY) { stopAuto(); autoInterval = setInterval(nextSlide, AUTO_DELAY); } }
-  function stopAuto() { if (autoInterval) clearInterval(autoInterval); }
-
-  const container = document.querySelector('.features-carousel-container');
-  if (container) {
-    container.addEventListener('mouseenter', stopAuto);
-    container.addEventListener('mouseleave', startAuto);
-  }
-
-  moveToSlide(visibleCount, false);
-  startAuto();
-  window.addEventListener('resize', () => moveToSlide(currentIndex, false));
-})();
-
 // === 4 sERVICES Mobile carousel JS====================
 (function() {
             const container = document.getElementById('snapsContainer');
             const wrapper = document.getElementById('carouselWrapper');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const dotsContainer = document.getElementById('carouselDots');
+            const prevBtn = document.getElementById('snapsPrevBtn');
+            const nextBtn = document.getElementById('snapsNextBtn');
+            const dotsContainer = document.getElementById('snapsCarouselDots');
+
+            if (!container || !wrapper || !prevBtn || !nextBtn || !dotsContainer) return;
 
             const cards = container.querySelectorAll('.snap-card');
             const totalSlides = cards.length;

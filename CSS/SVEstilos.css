@@ -226,21 +226,6 @@ h1, h2, h3 {
 }
 
 /* === HERO SECTION ============================== */
-/* ── Hero tokens ── */
-:root {
-  --cream:      #f5f0eb;
-  --warm-white: #fdfaf7;
-  --sand:       #e8dfd3;
-  --caramel:    #c5a882;
-  --mocha:      #8a6d4a;
-  --espresso:   #3d2f1f;
-  --ink:        #1a1208;
-  --gold:       #e8a800;
-  --radius-pill: 100px;
-  --radius-card: 16px;
-}
-
-/* ── Hero SECTION ── */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -598,6 +583,9 @@ h1, h2, h3 {
 }
 
 /* ===== CARRUSEL DE FEATURES - VERSIÓN CORREGIDA ===== */
+/* ====================================================
+   FIX: #moresnap – Full width, centered on mobile
+   ==================================================== */
 .text-section {
   text-align: center;
 }
@@ -731,20 +719,11 @@ section {
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* Responsive: en móviles mostrar 1 sola tarjeta */
 @media (max-width: 767px) {
   .feature {
     flex: 0 0 calc(100% - 20px);
   }
 }
-
-/* Ajuste opcional para tablets (2 columnas) - si lo deseas, puedes habilitar */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .feature {
-    flex: 0 0 calc(50% - 20px);
-  }
-}
-
 
 /* === SECCIÓN SERVICIOS ========================= */
 #hire {
@@ -877,6 +856,143 @@ section {
     text-align: center;
     margin-bottom: 1.2rem;
     line-height: 1.6;
+}
+
+/* === TESTIMONIAL CAROUSEL ====================== */
+#moresnap {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  align-items: center;
+  gap: 3rem;
+}
+
+#moresnap .image-section,
+#moresnap .text-section {
+  min-width: 0;
+}
+
+#moresnap .features-carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 4.5rem;
+}
+
+#moresnap .features-carousel {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  will-change: transform;
+  transition: transform 0.45s ease;
+}
+
+#moresnap .feature {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 0.75rem;
+}
+
+#moresnap .feature img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+#moresnap .feature b,
+#moresnap .feature p {
+  display: block;
+  text-align: center;
+}
+
+#moresnap .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+#moresnap .carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--nude);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#moresnap .carousel-dots .dot.active {
+  background: var(--charcoal);
+  transform: scale(1.15);
+}
+
+#moresnap .carousel-nav {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(28, 28, 28, 0.72);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  z-index: 2;
+}
+
+#moresnap .carousel-nav.prev {
+  left: 0.5rem;
+}
+
+#moresnap .carousel-nav.next {
+  right: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  #moresnap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #moresnap .image-section {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #moresnap .feature {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #moresnap .feature {
+    flex-basis: 33.3333%;
+  }
+}
+
+@media (max-width: 767px) {
+  #moresnap .features-carousel-container {
+    padding-bottom: 4rem;
+  }
+
+  #moresnap .feature {
+    padding: 0 0.25rem;
+  }
+
+  #moresnap .carousel-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
 }
 
 /* Botón dentro del card */
