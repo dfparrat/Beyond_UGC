@@ -576,6 +576,25 @@
 <script src="JS/SVBackEnd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<div class="modal fade" id="paymentMethodModal" tabindex="-1" aria-labelledby="paymentMethodModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentMethodModalLabel">Choose payment method</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-2" id="selectedServiceName"></p>
+        <p class="text-muted small mb-0">You will be redirected to the secure checkout page.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" id="payWithPaypalBtn">Pay with PayPal</button>
+        <button type="button" class="btn btn-primary" id="payWithMercadoPagoBtn">Pay with Mercado Pago</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".snapvas-counter");
@@ -617,5 +636,6 @@
 });
 
 </script>
+<script src="JS/payments.js"></script>
 </body>
 </html>
