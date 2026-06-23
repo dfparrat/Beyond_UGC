@@ -176,11 +176,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 const SERVICE_ID  = "service_hbw2k4z";
                 const TEMPLATE_ID = "template_n019kcj";
 
+              const portfolioField = this.elements["portfolio_url"];
+              const resumeField = this.elements["from_resume"];
+              const portfolioUrl = portfolioField ? portfolioField.value.trim() : "";
+              const resumeFileName = resumeField && resumeField.files.length > 0
+                ? resumeField.files[0].name
+                : "";
+              const baseMessage = this.elements["from_message"].value;
+
+              let enrichedMessage = baseMessage;
+              if (portfolioUrl) {
+                enrichedMessage += `\n\nPortfolio URL: ${portfolioUrl}`;
+              }
+              if (resumeFileName) {
+                enrichedMessage += `\nResume file: ${resumeFileName}`;
+              }
+
                 const formData = {
                     from_name:    this.elements["from_name"].value,
                     from_email:   this.elements["from_email"].value,
                     from_job:     this.elements["from_job"].value,
-                    from_message: this.elements["from_message"].value
+                from_message: enrichedMessage
                 };
 
                 emailjs.send(SERVICE_ID, TEMPLATE_ID, formData)
@@ -241,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const dotsContainer = document.getElementById('featuresCarouselDots');
   const prevBtn = document.getElementById('featuresPrevBtn');
   const nextBtn = document.getElementById('featuresNextBtn');
+  const MAX_SLIDES = 5;
   
   if (!carousel || !carouselContainer || !dotsContainer) return;
   
@@ -263,24 +280,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function rebuildCarousel() {
     const desiredItemsPerView = getItemsPerView();
+    const maxFeatureCount = Math.max(desiredItemsPerView, desiredItemsPerView * MAX_SLIDES);
+    const sourceFeatures = originalFeatures.slice(0, maxFeatureCount);
     const cloneCount = desiredItemsPerView > 1
-      ? (desiredItemsPerView - (originalFeatures.length % desiredItemsPerView)) % desiredItemsPerView
+      ? (desiredItemsPerView - (sourceFeatures.length % desiredItemsPerView)) % desiredItemsPerView
       : 0;
 
     carousel.innerHTML = '';
 
-    originalFeatures.forEach(feature => {
+    sourceFeatures.forEach(feature => {
       carousel.appendChild(feature.cloneNode(true));
     });
 
     for (let index = 0; index < cloneCount; index++) {
-      carousel.appendChild(originalFeatures[index].cloneNode(true));
+      carousel.appendChild(sourceFeatures[index].cloneNode(true));
     }
 
     features = Array.from(carousel.children);
     totalFeatures = features.length;
     renderedItemsPerView = desiredItemsPerView;
-    totalSlides = Math.ceil(totalFeatures / itemsPerView);
+    totalSlides = Math.min(MAX_SLIDES, Math.ceil(totalFeatures / desiredItemsPerView));
 
     if (currentIndex >= totalSlides) {
       currentIndex = totalSlides - 1;
@@ -297,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shouldRebuild) {
       rebuildCarousel();
     }
-    totalSlides = Math.ceil(totalFeatures / itemsPerView);
+    totalSlides = Math.min(MAX_SLIDES, Math.ceil(totalFeatures / itemsPerView));
     
     // Ajustar el ancho de cada feature
     const featureWidth = carouselContainer.clientWidth / itemsPerView;
@@ -434,6 +453,56 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCarousel();
   createDots();
   startAutoSlide();
+});
+
+// === SERVICES CAROUSEL DESKTOP ENHANCEMENTS ===
+document.addEventListener('DOMContentLoaded', function () {
+  const desktopCarouselEl = document.getElementById('servicesCarouselDesktop');
+  if (!desktopCarouselEl || typeof bootstrap === 'undefined') return;
+
+  const desktopCarousel = bootstrap.Carousel.getOrCreateInstance(desktopCarouselEl, {
+    interval: 3000,
+    wrap: true,
+    touch: true,
+    keyboard: true
+  });
+
+  desktopCarouselEl.setAttribute('tabindex', '0');
+
+  desktopCarouselEl.addEventListener('keydown', function (event) {
+    if (window.innerWidth < 992) return;
+    if (event.key === 'ArrowRight') {
+      desktopCarousel.next();
+      event.preventDefault();
+    } else if (event.key === 'ArrowLeft') {
+      desktopCarousel.prev();
+      event.preventDefault();
+    }
+  });
+
+  let wheelLock = false;
+  desktopCarouselEl.addEventListener('wheel', function (event) {
+    if (window.innerWidth < 992 || wheelLock) return;
+
+    const dominantDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX)
+      ? event.deltaY
+      : event.deltaX;
+
+    if (Math.abs(dominantDelta) < 10) return;
+
+    event.preventDefault();
+    wheelLock = true;
+
+    if (dominantDelta > 0) {
+      desktopCarousel.next();
+    } else {
+      desktopCarousel.prev();
+    }
+
+    setTimeout(function () {
+      wheelLock = false;
+    }, 500);
+  }, { passive: false });
 });
 
 // === 4 sERVICES Mobile carousel JS====================

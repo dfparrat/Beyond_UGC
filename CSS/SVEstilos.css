@@ -800,6 +800,9 @@ section {
     min-width: 260px;
     max-width: 100%;
     cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .service-card:hover {
     transform: translateY(-6px);
@@ -825,6 +828,10 @@ section {
     margin: 1.2rem 1.2rem 0.6rem;
     color: var(--charcoal) !important;
     text-decoration: none !important;
+  min-height: 3.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-link {
@@ -855,6 +862,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+  margin-top: auto;
 }
 .service-details p {
     font-family: 'DM Sans', sans-serif;
@@ -1043,6 +1051,41 @@ section {
 }
 .carousel-indicators .active { background-color: var(--nude-dark) !important; }
 .carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(0); }
+
+/* Desktop services controls: larger, always visible, and easier to hit */
+#servicesCarouselDesktop {
+  position: relative;
+}
+
+#servicesCarouselDesktop .carousel-control-prev,
+#servicesCarouselDesktop .carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  opacity: 1;
+  z-index: 6;
+}
+
+#servicesCarouselDesktop .carousel-control-prev {
+  left: -12px;
+}
+
+#servicesCarouselDesktop .carousel-control-next {
+  right: -12px;
+}
+
+#servicesCarouselDesktop .carousel-control-prev-icon,
+#servicesCarouselDesktop .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+#servicesCarouselDesktop .carousel-control-prev:hover,
+#servicesCarouselDesktop .carousel-control-next:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
 
 @media (max-width: 1024px) {
     .service-card { flex: 1 1 calc(50% - 1rem); }

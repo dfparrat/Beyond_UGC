@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Creator Lounge Society">
+    <meta name="keywords" content="Beyond UGC, creator team application, UGC careers">
+    <meta name="description" content="Apply to join the Beyond UGC team.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Join The Team | Beyond UGC</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="CSS/SVEstilos.css" rel="stylesheet">
+
+    <style>
+      .team-application-section {
+        padding: 130px 20px 80px;
+        background: linear-gradient(180deg, #faf7f2 0%, #f4ede3 100%);
+      }
+
+      .application-shell {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 28px;
+      }
+
+      .application-panel,
+      .form-panel {
+        background: #fff;
+        border: 1px solid rgba(200, 170, 140, 0.22);
+        border-radius: 16px;
+        box-shadow: 0 14px 40px rgba(28, 28, 28, 0.08);
+      }
+
+      .application-panel {
+        padding: 34px 30px;
+      }
+
+      .form-panel {
+        padding: 30px;
+      }
+
+      .application-eyebrow {
+        display: inline-block;
+        padding: 6px 14px;
+        border: 1px solid #c9a98a;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 12px;
+        color: #6b6058;
+        margin-bottom: 16px;
+      }
+
+      .application-panel h1 {
+        font-size: clamp(2rem, 2.9vw, 2.9rem);
+        color: #1c1c1c;
+        margin-bottom: 14px;
+      }
+
+      .application-panel p {
+        color: #6b6058;
+        font-size: 0.98rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .role-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .role-chip {
+        border: 1px solid rgba(201, 169, 138, 0.42);
+        border-radius: 12px;
+        padding: 12px;
+        background: #fcfaf7;
+      }
+
+      .role-chip strong {
+        display: block;
+        font-size: 0.95rem;
+        color: #1c1c1c;
+        margin-bottom: 5px;
+        font-family: 'Cormorant Garamond', serif;
+      }
+
+      .role-chip span {
+        color: #6b6058;
+        font-size: 0.84rem;
+      }
+
+      .application-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .application-list li {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        margin-bottom: 9px;
+        color: #6b6058;
+        font-size: 0.9rem;
+      }
+
+      .application-list li i {
+        color: #c9a98a;
+        margin-top: 5px;
+      }
+
+      .form-panel h2 {
+        font-size: 1.9rem;
+        color: #1c1c1c;
+        margin-bottom: 8px;
+      }
+
+      .form-panel .form-intro {
+        color: #6b6058;
+        font-size: 0.92rem;
+        margin-bottom: 18px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .form-group {
+        margin-bottom: 12px;
+      }
+
+      .form-group.full {
+        grid-column: 1 / -1;
+      }
+
+      .form-label {
+        font-size: 0.84rem;
+        margin-bottom: 6px;
+        color: #1c1c1c;
+        font-weight: 500;
+      }
+
+      .form-control,
+      .form-select {
+        border-radius: 10px;
+        border: 1px solid rgba(201, 169, 138, 0.5);
+        padding: 0.7rem 0.85rem;
+      }
+
+      textarea.form-control {
+        min-height: 130px;
+        resize: vertical;
+      }
+
+      .form-note {
+        color: #6b6058;
+        font-size: 0.81rem;
+        margin-top: 4px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        border: none;
+        border-radius: 999px;
+        padding: 0.9rem 1.4rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+        background: #1c1c1c;
+        color: #fff;
+        transition: opacity 0.2s ease;
+      }
+
+      .submit-btn:hover {
+        opacity: 0.88;
+      }
+
+      @media (max-width: 991px) {
+        .application-shell {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .team-application-section {
+          padding-top: 112px;
+          padding-bottom: 64px;
+        }
+
+        .application-panel,
+        .form-panel {
+          padding: 22px;
+        }
+
+        .role-grid,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container-fluid px-3">
+
+      <div class="navbar-mobile-container d-flex d-lg-none w-100 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="IMG/BUGC LOGO- BLACK.png" alt="BUPG LOGO" class="logo-img">
+        </a>
+        <div class="mobile-spacer flex-grow-1"></div>
+        <a href="contact.html" class="btn hire-now-btn mx-2">Schedule with Us!</a>
+        <div class="mobile-spacer flex-grow-1"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="d-none d-lg-flex w-100 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="IMG/BUGC LOGO- BLACK.png" alt="BUPG LOGO" class="logo-img">
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="About_Us.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn hire-now-btn ms-3 d-lg-inline-block">Book Now!</a>
+      </div>
+
+      <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About_Us.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="team-application-section">
+    <div class="application-shell">
+      <article class="application-panel">
+        <span class="application-eyebrow">Join Beyond UGC</span>
+        <h1>Apply To Become A Beyond UGC Team Member</h1>
+        <p>
+          We are actively looking for creators and support specialists who can help brands grow through high-quality, authentic social content.
+          Choose the area that best matches your strengths and tell us why you are a great fit.
+        </p>
+
+        <div class="role-grid" aria-label="Role areas based on Index snaps section">
+          <div class="role-chip">
+            <strong>Beauty</strong>
+            <span>Skincare, makeup concepts, and trend-first visual storytelling.</span>
+          </div>
+          <div class="role-chip">
+            <strong>Haircare</strong>
+            <span>Routine hooks, transformation formats, and educational product demos.</span>
+          </div>
+          <div class="role-chip">
+            <strong>Tech</strong>
+            <span>Feature-driven demos, script clarity, and conversion-focused content.</span>
+          </div>
+          <div class="role-chip">
+            <strong>Wellness</strong>
+            <span>Lifestyle narratives, trust-building content, and daily habit storytelling.</span>
+          </div>
+        </div>
+
+        <ul class="application-list">
+          <li><i class="fa-solid fa-check"></i><span>Clear role tracks from our Index 4 Areas section.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Creator-first workflows and supportive collaboration.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Opportunities to work on active brand campaigns.</span></li>
+        </ul>
+      </article>
+
+      <section class="form-panel">
+        <h2>Application Form</h2>
+        <p class="form-intro">Complete this form and our team will review your profile and contact you.</p>
+
+        <form id="applicant-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="from_name">Full name</label>
+              <input class="form-control" type="text" id="from_name" name="from_name" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="from_email">Email</label>
+              <input class="form-control" type="email" id="from_email" name="from_email" required>
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="from_job">Area you want to join</label>
+              <select class="form-select" id="from_job" name="from_job" required>
+                <option value="" selected disabled>Select one area</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Haircare">Haircare</option>
+                <option value="Tech">Tech</option>
+                <option value="Wellness">Wellness</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="portfolio_url">Portfolio or social profile URL</label>
+              <input class="form-control" type="url" id="portfolio_url" name="portfolio_url" placeholder="https://">
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="from_message">Why do you want to join Beyond UGC?</label>
+              <textarea class="form-control" id="from_message" name="from_message" required></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="from_resume">Upload resume or media kit</label>
+              <input class="form-control" type="file" id="from_resume" name="from_resume" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" required>
+              <div class="form-note">Accepted: PDF, DOC, DOCX, PNG, JPG</div>
+            </div>
+
+            <div class="form-group full">
+              <button class="submit-btn" type="submit">Send Application</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-custom py-5">
+  <div class="container">
+    <div class="row justify-content-between">
+
+      <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+        <div class="d-flex flex-column">
+          <div class="d-flex align-items-center mb-3">
+            <a href="index.html">
+              <img src="IMG/BUGC LOGO-GOLD.png" alt="BeyondUGC" style="max-height: 30px; filter: brightness(0) invert(1);">
+            </a>
+            <div class="ms-3 d-flex gap-2">
+              <a href="https://www.tiktok.com/@dianapardougc" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.instagram.com/dianapardougc" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="contact-info">
+            <p class="mb-2">BeyondUGC</p>
+            <p class="mb-2">dianapardova@gmail.com</p>
+            <p>USA - +1 300 000 0000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-3 col-md-2">
+        <h6>Servicios</h6>
+        <ul>
+          <li><a href="pricing.html">Our services</a></li>
+          <li><a href="Applicant_form.html">Join us</a></li>
+          <li><a href="pricing.html">Shop Products</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-sm-3 col-md-2">
+        <h6>About us:</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <a href="contact.html" class="btn-get-hired mt-2">Schedule with us</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+<script src="JS/SVBackEnd.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const areaParam = new URLSearchParams(window.location.search).get('area');
+    const areaField = document.getElementById('from_job');
+    if (areaParam && areaField) {
+      const validAreas = ['Beauty', 'Haircare', 'Tech', 'Wellness'];
+      if (validAreas.includes(areaParam)) {
+        areaField.value = areaParam;
+      }
+    }
+
+  });
+</script>
+</body>
+</html>
