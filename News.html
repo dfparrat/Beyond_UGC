@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Beyond UGC">
+    <meta name="keywords" content="Beyond UGC news, UGC tips, creator updates">
+    <meta name="description" content="Beyond UGC News Blog: strategy updates, creator education, and social trends.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>News Blog | Beyond UGC</title>
+
+    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_CODE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="CSS/SVEstilos.css" rel="stylesheet">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <style>
+      .news-main {
+        padding: 120px 1rem 70px;
+        background: linear-gradient(180deg, #faf7f2 0%, #ffffff 100%);
+      }
+
+      .news-shell {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .news-heading {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .news-heading h1 {
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        margin-bottom: 0.8rem;
+      }
+
+      .news-heading p {
+        color: #6b6058;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.3rem;
+      }
+
+      .news-card {
+        background: #fff;
+        border: 1px solid rgba(201, 169, 138, 0.25);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(28, 28, 28, 0.07);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .news-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .news-card-body {
+        padding: 1rem 1rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        height: 100%;
+      }
+
+      .news-meta {
+        font-size: 0.76rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #c9a98a;
+      }
+
+      .news-card h2 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+      }
+
+      .news-card p {
+        color: #6b6058;
+        font-size: 0.92rem;
+        margin: 0;
+      }
+
+      .news-link {
+        margin-top: auto;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #1c1c1c;
+        font-weight: 600;
+      }
+
+      .news-link:hover {
+        color: #c9a98a;
+      }
+
+      .article-list {
+        margin-top: 3rem;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .article-section {
+        scroll-margin-top: 120px;
+        background: #ffffff;
+        border: 1px solid rgba(201, 169, 138, 0.25);
+        border-radius: 14px;
+        padding: 1.25rem;
+        box-shadow: 0 8px 24px rgba(28, 28, 28, 0.07);
+      }
+
+      .article-kicker {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #c9a98a;
+      }
+
+      .article-section h3 {
+        margin-bottom: 0.65rem;
+      }
+
+      .article-section p {
+        color: #4c4742;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-section ul {
+        margin: 0;
+        padding-left: 1.15rem;
+        color: #4c4742;
+      }
+
+      @media (max-width: 1024px) {
+        .news-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        .news-main {
+          padding-top: 106px;
+        }
+
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container-fluid px-3">
+
+      <div class="navbar-mobile-container d-flex d-lg-none w-100 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="IMG/BUGC LOGO- BLACK.png" alt="BUPG LOGO" class="logo-img">
+        </a>
+        <div class="mobile-spacer flex-grow-1"></div>
+        <a href="contact.html" class="btn hire-now-btn mx-2">Schedule with Us!</a>
+        <div class="mobile-spacer flex-grow-1"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="d-none d-lg-flex w-100 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="IMG/BUGC LOGO- BLACK.png" alt="BUPG LOGO" class="logo-img">
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="About_Us.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link nav-blog-link" href="News.html">News Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn hire-now-btn ms-3 d-lg-inline-block">Book Now!</a>
+      </div>
+
+      <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About_Us.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link nav-blog-link" href="News.html">News Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<main class="news-main">
+  <div class="news-shell">
+    <div class="news-heading">
+      <span class="section-tag">News Blog</span>
+      <h1>Beyond UGC Updates For Creators And Brands</h1>
+      <p>Read weekly updates on creator economy trends, campaign structure, and practical content strategies you can use right away.</p>
+    </div>
+
+    <section class="news-grid" aria-label="Beyond UGC blog posts">
+      <article class="news-card">
+        <img src="IMG/profile_1.jpeg" alt="UGC campaign planning">
+        <div class="news-card-body">
+          <span class="news-meta">June 2026 - Strategy</span>
+          <h2>How To Build A 30-Day UGC Content Plan</h2>
+          <p>A practical framework to publish consistently without creative burnout, including weekly structure and reusable hooks.</p>
+          <a href="#article-1" class="news-link">Read article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="IMG/profile_2.jpeg" alt="Creator rates and negotiation">
+        <div class="news-card-body">
+          <span class="news-meta">June 2026 - Creator Growth</span>
+          <h2>Rate Cards: What To Include And What To Avoid</h2>
+          <p>Key pricing components, deal scope boundaries, and communication tips for stronger creator-brand negotiations.</p>
+          <a href="#article-2" class="news-link">Read article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="IMG/profile_3.jpg" alt="High converting social content">
+        <div class="news-card-body">
+          <span class="news-meta">June 2026 - Performance</span>
+          <h2>Why Authentic Hooks Outperform Over-Produced Ads</h2>
+          <p>Learn how credibility-first intros can improve watch time and click intent in short-form social campaigns.</p>
+          <a href="#article-3" class="news-link">Read article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="IMG/profile_4.jpg" alt="Brand collaboration workflow">
+        <div class="news-card-body">
+          <span class="news-meta">June 2026 - Operations</span>
+          <h2>A Better Workflow For Brand And Creator Collaboration</h2>
+          <p>From briefing to final cut, this workflow helps teams reduce revisions and speed up campaign delivery.</p>
+          <a href="#article-4" class="news-link">Read article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="IMG/Testimony_2.jpeg" alt="Creator education and coaching">
+        <div class="news-card-body">
+          <span class="news-meta">June 2026 - Education</span>
+          <h2>Inside Our Weekly Creator Coaching Structure</h2>
+          <p>See how live sessions are organized to help creators move from confusion to campaign-ready execution.</p>
+          <a href="#article-5" class="news-link">Read article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="IMG/Testimony_5.jpeg" alt="Community and social proof">
+        <div class="news-card-body">
+          <span class="news-meta">June 2026 - Community</span>
+          <h2>How Community Feedback Improves UGC Quality</h2>
+          <p>Peer review loops and creator collaboration can raise quality fast while keeping content natural and relatable.</p>
+          <a href="#article-6" class="news-link">Read article &rarr;</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="article-list" aria-label="Full Beyond UGC articles">
+      <article id="article-1" class="article-section">
+        <span class="article-kicker">Article 01 · Strategy</span>
+        <h3>How To Build A 30-Day UGC Content Plan</h3>
+        <p>Most high-performing creators and brand teams use a monthly planning cycle because social algorithms reward consistency and audience trust grows with repeated value. At Beyond UGC, we recommend planning by content pillars: education, proof, personality, and offer. This keeps content varied while still aligned to campaign goals.</p>
+        <p>Use week one for research and hooks, week two for production, week three for editing and testing, and week four for optimization. Public creator economy guidance from major platform education hubs consistently emphasizes testing multiple hooks and formats, then doubling down on winning patterns instead of reinventing every post.</p>
+        <ul>
+          <li>Pick 3-4 pillars and assign at least two posts to each.</li>
+          <li>Batch record short clips in one session to reduce production fatigue.</li>
+          <li>Track watch time, saves, and clicks weekly to refine next month.</li>
+        </ul>
+      </article>
+
+      <article id="article-2" class="article-section">
+        <span class="article-kicker">Article 02 · Creator Growth</span>
+        <h3>Rate Cards: What To Include And What To Avoid</h3>
+        <p>Transparent pricing helps brands approve collaborations faster and helps creators avoid scope creep. A solid rate card includes deliverables, usage rights, revision limits, turnaround times, and payment terms. These fundamentals align with public freelance contract best practices used across creative industries.</p>
+        <p>At Beyond UGC, we suggest creators separate base production fees from licensing and paid usage. This gives brands flexibility while protecting creator value when content is used in ads or repurposed across channels.</p>
+        <ul>
+          <li>List each deliverable clearly: format, duration, and quantity.</li>
+          <li>State rights in plain language: organic use vs. paid advertising use.</li>
+          <li>Avoid vague terms like unlimited revisions without boundaries.</li>
+        </ul>
+      </article>
+
+      <article id="article-3" class="article-section">
+        <span class="article-kicker">Article 03 · Performance</span>
+        <h3>Why Authentic Hooks Outperform Over-Produced Ads</h3>
+        <p>Public platform trend reports have repeatedly shown that native-feeling videos often retain viewers better than polished, ad-first creative. People stay longer when the opening feels real, immediate, and relevant to their problem. The first two seconds are still the highest-leverage moment in most short-form formats.</p>
+        <p>Beyond UGC scripts begin with situation-based hooks, then move quickly into proof and outcome. This makes videos feel like recommendations from a trusted person, not interruptions in the feed.</p>
+        <ul>
+          <li>Start with one pain point users instantly recognize.</li>
+          <li>Show a clear visual proof moment in the first 5 seconds.</li>
+          <li>Close with one direct action step, not multiple CTAs.</li>
+        </ul>
+      </article>
+
+      <article id="article-4" class="article-section">
+        <span class="article-kicker">Article 04 · Operations</span>
+        <h3>A Better Workflow For Brand And Creator Collaboration</h3>
+        <p>Faster campaigns come from better handoffs, not just faster editing. Industry-standard project management practices show that unclear briefs and delayed feedback are top causes of missed deadlines. A simple operating rhythm can prevent most revision loops.</p>
+        <p>Our Beyond UGC workflow uses five checkpoints: brief alignment, script approval, raw capture review, first cut feedback, and final delivery package. Each stage has one owner and one deadline to keep production moving without confusion.</p>
+        <ul>
+          <li>Use one shared brief template for every campaign.</li>
+          <li>Limit feedback windows to 24-48 hours per stage.</li>
+          <li>Deliver final assets with naming and format standards.</li>
+        </ul>
+      </article>
+
+      <article id="article-5" class="article-section">
+        <span class="article-kicker">Article 05 · Education</span>
+        <h3>Inside Our Weekly Creator Coaching Structure</h3>
+        <p>Learning accelerates when creators combine live practice, expert feedback, and peer accountability. This mirrors public adult-learning best practices that prioritize active application over passive consumption. Our coaching format is built to help beginners execute quickly while giving advanced creators room to refine strategy.</p>
+        <p>Every week at Beyond UGC, creators review one tactical framework, workshop real scripts, and leave with an action plan for the next seven days. The goal is simple: remove overwhelm and turn knowledge into publishable content.</p>
+        <ul>
+          <li>Monday: strategy reset and campaign planning.</li>
+          <li>Midweek: script and creative review session.</li>
+          <li>Friday: performance audit and next-step roadmap.</li>
+        </ul>
+      </article>
+
+      <article id="article-6" class="article-section">
+        <span class="article-kicker">Article 06 · Community</span>
+        <h3>How Community Feedback Improves UGC Quality</h3>
+        <p>Peer review is a proven quality multiplier in creative work. When creators exchange structured feedback, they spot weak hooks, unclear messaging, and pacing issues earlier. Public creator communities and educational cohorts frequently use this model because it improves output without increasing production costs.</p>
+        <p>Inside Beyond UGC, feedback focuses on audience clarity, retention moments, and conversion intent. That keeps critiques practical and aligned with brand outcomes rather than personal preference.</p>
+        <ul>
+          <li>Request feedback using one clear question per draft.</li>
+          <li>Prioritize changes that improve clarity and watch time first.</li>
+          <li>Track repeated feedback patterns to build long-term strengths.</li>
+        </ul>
+      </article>
+    </section>
+  </div>
+</main>
+
+<footer class="footer-custom py-5">
+  <div class="container">
+    <div class="row justify-content-between">
+
+      <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+        <div class="d-flex flex-column">
+          <div class="d-flex align-items-center mb-3">
+            <a href="index.html">
+              <img src="IMG/BUGC LOGO-GOLD.png" alt="BeyondUGC" style="max-height: 30px; filter: brightness(0) invert(1);">
+            </a>
+            <div class="ms-3 d-flex gap-2">
+              <a href="https://www.tiktok.com/@dianapardougc" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.instagram.com/dianapardougc" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="contact-info">
+            <p class="mb-2">BeyondUGC</p>
+            <p class="mb-2">dianapardova@gmail.com</p>
+            <p>USA · +1 (307) 333-9811</p>
+          </div>
+          <div class="newsletter-footer mt-3">
+            <p class="mb-2 text-light">Subscribe to our newsletter</p>
+            <!-- TODO(dianapardova@gmail.com): Replace Mailchimp action URL and hidden u/id values with the real audience embed endpoint. -->
+            <form action="https://YOUR_DC.list-manage.com/subscribe/post?u=YOUR_U&amp;id=YOUR_ID" method="post" target="_blank" class="mailchimp-form d-flex flex-column gap-2">
+              <input type="hidden" name="u" value="YOUR_U">
+              <input type="hidden" name="id" value="YOUR_ID">
+              <input type="email" name="EMAIL" class="form-control form-control-sm" placeholder="your@email.com" required>
+              <button type="submit" class="btn btn-sm btn-outline-light">Subscribe</button>
+            </form>
+            <small class="d-block mt-1" style="opacity:0.75;">Mailchimp embed ready. Replace the action, u, and id values with your audience endpoint.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-3 col-md-2">
+        <h6>Servicios</h6>
+        <ul>
+          <li><a href="pricing.html">Our services</a></li>
+          <li><a href="Applicant_form.html">Join us</a></li>
+          <li><a href="pricing.html">Shop Products</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-sm-3 col-md-2">
+        <h6>About us:</h6>
+        <ul class="list-unstyled">
+          <li><a href="terms.html">Terms and Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+        <a href="contact.html" class="btn-get-hired mt-2">Schedule with us</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="JS/SVBackEnd.js"></script>
+</body>
+</html>

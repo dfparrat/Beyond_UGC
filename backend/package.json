@@ -1,0 +1,16 @@
+{
+  "name": "beyond-ugc-payments-api",
+  "version": "1.0.0",
+  "description": "Payments API for PayPal and Mercado Pago",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
