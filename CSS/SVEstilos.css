@@ -239,6 +239,96 @@ h1, h2, h3 {
 }
 
 /* === HERO SECTION ============================== */
+/* === HERO CAROUSEL ============================= */
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Prev / Next arrow buttons */
+.hero-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(201, 169, 138, 0.5);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c1c1c;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.hero-carousel-btn:hover {
+  background: #1c1c1c;
+  color: #fff;
+  border-color: #1c1c1c;
+}
+
+.hero-carousel-prev { left: 18px; }
+.hero-carousel-next { right: 18px; }
+
+/* Dot indicators */
+.hero-carousel-dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201, 169, 138, 0.8);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.hero-dot.active {
+  background: #c9a98a;
+  transform: scale(1.25);
+  border-color: #c9a98a;
+}
+
+@media (max-width: 768px) {
+  .hero-carousel-btn { width: 36px; height: 36px; font-size: 1.3rem; }
+  .hero-carousel-prev { left: 8px; }
+  .hero-carousel-next { right: 8px; }
+}
+
+/* === HERO SECTION ============================== */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -619,6 +709,51 @@ section {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.testimonials-section {
+  padding: 3.5rem 0 4rem;
+}
+
+#moresnap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+#moresnap .text-section {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#moresnap .features-carousel-container {
+  max-width: 1280px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+#moresnap .features-carousel {
+  justify-content: center;
+  align-items: stretch;
+}
+
+#moresnap .feature {
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .testimonials-section {
+    padding: 2.5rem 0 3rem;
+  }
+
+  #moresnap {
+    padding: 0 0.75rem;
+  }
+
+  #moresnap .features-carousel-container {
+    padding: 0 0.25rem;
+  }
 }
 
 

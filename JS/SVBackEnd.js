@@ -1,5 +1,5 @@
 // ================================================
-//  INTEGRA CLINIC — SVBackEnd.js
+//  Beyond UGC — SVBackEnd.js
 //  Compatible con diseño A+ Socials (crema/nude)
 // ================================================
 
@@ -38,6 +38,62 @@ window.addEventListener('scroll', function() {
     scrollTimeout = null;
   });
 });
+
+// === HERO CAROUSEL ============================
+(function initHeroCarousel() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.getElementById('heroCarousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.hero-slide');
+    const dots   = carousel.querySelectorAll('.hero-dot');
+    const prev   = document.getElementById('heroPrev');
+    const next   = document.getElementById('heroNext');
+    const TOTAL  = slides.length;
+    const INTERVAL = 5000;
+    let current = 0;
+    let timer;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      dots[current].setAttribute('aria-selected', 'false');
+      current = (index + TOTAL) % TOTAL;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      dots[current].setAttribute('aria-selected', 'true');
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(function () { goTo(current + 1); }, INTERVAL);
+    }
+
+    // Arrow buttons
+    if (prev) prev.addEventListener('click', function () { goTo(current - 1); startTimer(); });
+    if (next) next.addEventListener('click', function () { goTo(current + 1); startTimer(); });
+
+    // Dot buttons
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        goTo(parseInt(dot.dataset.index, 10));
+        startTimer();
+      });
+    });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+    carousel.addEventListener('mouseleave', startTimer);
+
+    // Keyboard support (left / right arrows)
+    carousel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft')  { goTo(current - 1); startTimer(); }
+      if (e.key === 'ArrowRight') { goTo(current + 1); startTimer(); }
+    });
+
+    startTimer();
+  });
+})();
 
 // === POPUP FUNCTIONALITY ======================
 document.addEventListener('DOMContentLoaded', function () {
