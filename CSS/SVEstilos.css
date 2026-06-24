@@ -960,13 +960,19 @@ section {
 
 .service-icon {
     background: var(--blush);
-    padding: 2.5rem;
+  padding: 0;
     text-align: center;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 .service-icon img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .service-card h3 {
@@ -1246,6 +1252,9 @@ section {
         width: 95%;
         padding: 0 1rem;
     }
+  .service-icon {
+    height: 180px;
+  }
     .service-card {
         flex: 1 1 100%;
         min-width: 100% !important;

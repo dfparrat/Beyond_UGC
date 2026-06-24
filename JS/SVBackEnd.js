@@ -313,7 +313,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const dotsContainer = document.getElementById('featuresCarouselDots');
   const prevBtn = document.getElementById('featuresPrevBtn');
   const nextBtn = document.getElementById('featuresNextBtn');
-  const MAX_SLIDES = 5;
   
   if (!carousel || !carouselContainer || !dotsContainer) return;
   
@@ -336,26 +335,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function rebuildCarousel() {
     const desiredItemsPerView = getItemsPerView();
-    const maxFeatureCount = Math.max(desiredItemsPerView, desiredItemsPerView * MAX_SLIDES);
-    const sourceFeatures = originalFeatures.slice(0, maxFeatureCount);
-    const cloneCount = desiredItemsPerView > 1
-      ? (desiredItemsPerView - (sourceFeatures.length % desiredItemsPerView)) % desiredItemsPerView
-      : 0;
 
     carousel.innerHTML = '';
 
-    sourceFeatures.forEach(feature => {
+    originalFeatures.forEach(feature => {
       carousel.appendChild(feature.cloneNode(true));
     });
-
-    for (let index = 0; index < cloneCount; index++) {
-      carousel.appendChild(sourceFeatures[index].cloneNode(true));
-    }
 
     features = Array.from(carousel.children);
     totalFeatures = features.length;
     renderedItemsPerView = desiredItemsPerView;
-    totalSlides = Math.min(MAX_SLIDES, Math.ceil(totalFeatures / desiredItemsPerView));
+    totalSlides = Math.ceil(totalFeatures / desiredItemsPerView);
 
     if (currentIndex >= totalSlides) {
       currentIndex = totalSlides - 1;
@@ -372,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shouldRebuild) {
       rebuildCarousel();
     }
-    totalSlides = Math.min(MAX_SLIDES, Math.ceil(totalFeatures / itemsPerView));
+    totalSlides = Math.ceil(totalFeatures / itemsPerView);
     
     // Ajustar el ancho de cada feature
     const featureWidth = carouselContainer.clientWidth / itemsPerView;
