@@ -50,7 +50,8 @@ window.addEventListener('scroll', function() {
     const prev   = document.getElementById('heroPrev');
     const next   = document.getElementById('heroNext');
     const TOTAL  = slides.length;
-    const INTERVAL = 5000;
+    const parsedInterval = parseInt(carousel.dataset.autoplayInterval || '', 10);
+    const INTERVAL = Number.isFinite(parsedInterval) && parsedInterval > 0 ? parsedInterval : 5000;
     let current = 0;
     let timer;
 
