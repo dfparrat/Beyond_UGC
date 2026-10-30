@@ -1,0 +1,324 @@
+:root {
+  --blush: #F6E3DF;
+  --rose: #E8B4B8;
+  --mauve: #B76E79;
+  --champagne: #C9A66B;
+  --cream: #FBF5EF;
+  --ink: #4A3228;
+  --radius: clamp(16px, 2vw, 24px);
+  --shadow: 0 10px 30px rgba(183, 110, 121, .18);
+  --bu-ribbon-height: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+body {
+  color: var(--ink);
+}
+
+h1 em,
+h2 em,
+.hero-left h1 em {
+  color: var(--mauve);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+section h1::after,
+section h2::after {
+  content: '✦';
+  display: inline-block;
+  margin-inline-start: .35em;
+  color: var(--champagne);
+  font-size: .55em;
+  vertical-align: middle;
+}
+
+.section-tag::after {
+  content: '✦';
+  color: var(--champagne);
+}
+
+.hero .btn,
+.service-card .hire-now-btn,
+.hire-now-btn,
+.cta-button,
+.apply-btn,
+.btn-get-hired,
+.btn-dark-solid,
+.btn-nude-outline {
+  min-height: 44px;
+  border: 1px solid var(--rose);
+  border-radius: 999px;
+  background: linear-gradient(110deg, var(--rose), var(--champagne)) !important;
+  color: var(--ink) !important;
+}
+
+.service-card,
+#moresnap .feature,
+.snap-card {
+  border: 1px solid var(--rose);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.hero .photo-arch img,
+#moresnap .feature img,
+.service-icon img,
+.snap-card img {
+  border-radius: clamp(18px, 3vw, 28px);
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+.float-stars,
+.float-stat {
+  animation: feminine-float 6s ease-in-out infinite;
+}
+
+.bu-ribbon {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--bu-ribbon-height);
+  overflow-x: hidden;
+  background: var(--blush);
+  color: var(--ink);
+  font-size: clamp(.75rem, 2.5vw, 1rem);
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#hire::before {
+  content: '';
+  display: block;
+  height: var(--bu-ribbon-height);
+}
+
+html.bu-ribbon-ready #hire::before {
+  display: none;
+}
+
+.bu-ribbon__track {
+  display: flex;
+  width: max-content;
+  animation: feminine-marquee 30s linear infinite;
+}
+
+.bu-ribbon__track span {
+  flex: none;
+  padding-inline-end: 1.5em;
+}
+
+@keyframes feminine-marquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes feminine-float {
+  0%, 100% { transform: translateY(-6px); }
+  50% { transform: translateY(6px); }
+}
+
+html.fx-ready .fx {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+html.fx-ready .fx.fx-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero .btn,
+  .service-card .hire-now-btn,
+  .hire-now-btn,
+  .cta-button,
+  .apply-btn,
+  .btn-get-hired,
+  .btn-dark-solid,
+  .btn-nude-outline {
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  .hero .btn::after,
+  .service-card .hire-now-btn::after,
+  .hire-now-btn::after,
+  .cta-button::after,
+  .apply-btn::after,
+  .btn-get-hired::after,
+  .btn-dark-solid::after,
+  .btn-nude-outline::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, .4) 50%, transparent 75%);
+    opacity: 0;
+    transform: translateX(-110%);
+    pointer-events: none;
+  }
+
+  .hero .btn:hover,
+  .service-card .hire-now-btn:hover,
+  .hire-now-btn:hover,
+  .cta-button:hover,
+  .apply-btn:hover,
+  .btn-get-hired:hover,
+  .btn-dark-solid:hover,
+  .btn-nude-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(183, 110, 121, .22);
+  }
+
+  .hero .btn:hover::after,
+  .service-card .hire-now-btn:hover::after,
+  .hire-now-btn:hover::after,
+  .cta-button:hover::after,
+  .apply-btn:hover::after,
+  .btn-get-hired:hover::after,
+  .btn-dark-solid:hover::after,
+  .btn-nude-outline:hover::after {
+    opacity: 1;
+    transform: translateX(110%);
+    transition: transform .4s ease, opacity .2s ease;
+  }
+
+  .service-card:hover,
+  #moresnap .feature:hover,
+  .snap-card:hover,
+  html.fx-ready .service-card.fx-in:hover,
+  html.fx-ready #moresnap .feature.fx-in:hover,
+  html.fx-ready .snap-card.fx-in:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(183, 110, 121, .24);
+  }
+
+  .hero .photo-arch img:hover,
+  #moresnap .feature img:hover,
+  .service-icon img:hover,
+  .snap-card[data-index="0"] img:hover,
+  .snap-card[data-index="2"] img:hover {
+    transform: rotate(1.2deg) scale(1.02);
+  }
+
+  .hero-slide:nth-of-type(even) .photo-arch img:hover,
+  #moresnap .feature:nth-child(even) img:hover,
+  .col-lg-4:nth-child(even) .service-icon img:hover,
+  .snap-card[data-index="1"] img:hover,
+  .snap-card[data-index="3"] img:hover {
+    transform: rotate(-1.2deg) scale(1.02);
+  }
+
+  .bu-ribbon:hover .bu-ribbon__track {
+    animation-play-state: paused;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .hero .btn:hover,
+  .service-card .hire-now-btn:hover,
+  .hire-now-btn:hover,
+  .cta-button:hover,
+  .apply-btn:hover,
+  .btn-get-hired:hover,
+  .btn-dark-solid:hover,
+  .btn-nude-outline:hover {
+    transform: none;
+    background: linear-gradient(110deg, var(--rose), var(--champagne)) !important;
+    color: var(--ink) !important;
+    opacity: 1;
+    box-shadow: none;
+  }
+
+  .service-card:hover {
+    transform: none;
+    box-shadow: 0 6px 16px rgba(183, 110, 121, .18);
+  }
+
+  .hero .btn:active,
+  .service-card:active,
+  #moresnap .feature:active,
+  .snap-card:active,
+  .hero .photo-arch img:active,
+  #moresnap .feature img:active,
+  .service-icon img:active,
+  .snap-card img:active,
+  .hire-now-btn:active,
+  .cta-button:active,
+  .apply-btn:active,
+  .btn-get-hired:active,
+  .btn-dark-solid:active,
+  .btn-nude-outline:active {
+    transform: scale(.98);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-card,
+  #moresnap .feature,
+  .snap-card {
+    box-shadow: 0 6px 16px rgba(183, 110, 121, .18);
+  }
+
+  .hero .photo-arch img,
+  #moresnap .feature img,
+  .service-icon img,
+  .snap-card img {
+    border-radius: clamp(18px, 3vw, 28px);
+  }
+
+}
+
+@media (max-width: 767px) and (hover: hover) and (pointer: fine) {
+  .hero .photo-arch img:hover,
+  #moresnap .feature img:hover,
+  .service-icon img:hover,
+  .snap-card img:hover,
+  .hero-slide:nth-of-type(even) .photo-arch img:hover,
+  #moresnap .feature:nth-child(even) img:hover,
+  .col-lg-4:nth-child(even) .service-icon img:hover,
+  .snap-card[data-index="0"] img:hover,
+  .snap-card[data-index="1"] img:hover,
+  .snap-card[data-index="2"] img:hover,
+  .snap-card[data-index="3"] img:hover {
+    transform: scale(1.02);
+  }
+
+  .service-card:hover,
+  #moresnap .feature:hover,
+  .snap-card:hover,
+  html.fx-ready .service-card.fx-in:hover,
+  html.fx-ready #moresnap .feature.fx-in:hover,
+  html.fx-ready .snap-card.fx-in:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(183, 110, 121, .2);
+  }
+}
+
+@media (max-width: 480px) {
+  .float-stars,
+  .float-stat {
+    animation: none;
+  }
+
+  .bu-ribbon__track {
+    animation-duration: 20s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.fx-ready .fx {
+    opacity: 1;
+    transform: none;
+  }
+}
