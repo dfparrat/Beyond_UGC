@@ -1,10 +1,10 @@
 (function () {
   const links = {
     stanStore: {
-      general: "https://stan.store/BEYONDUGC",
+      general: "https://pay.hotmart.com/Y108361680E?off=u1zrtrnn&hotfeature=51&_hi=eyJjaWQiOiIxNzk0MDY4ODk4NTUzNzkyNzk4Njg0NjgxNDY3NDAwIiwiYmlkIjoiMTc5NDA2ODg5ODU1Mzc5Mjc5ODY4NDY4MTQ2NzQwMCIsInNpZCI6ImU1NzgwOWQ3NjA4MjQzOGM5MmE0ZTAxYjAxM2YwZDE2In0=.1794068957349&bid=1794068961044",
     },
     beacons: {
-      profile: "https://beacons.ai/beyondugc",
+      profile: "https://pay.hotmart.com/Y108361680E?off=u1zrtrnn&hotfeature=51&_hi=eyJjaWQiOiIxNzk0MDY4ODk4NTUzNzkyNzk4Njg0NjgxNDY3NDAwIiwiYmlkIjoiMTc5NDA2ODg5ODU1Mzc5Mjc5ODY4NDY4MTQ2NzQwMCIsInNpZCI6ImU1NzgwOWQ3NjA4MjQzOGM5MmE0ZTAxYjAxM2YwZDE2In0=.1794068957349&bid=1794068961044",
     },
     social: {
       tiktok: "https://www.tiktok.com/@dianapardougc",
@@ -51,6 +51,11 @@
       const isInFooter = Boolean(anchor.closest("footer"));
       const isInHero = Boolean(anchor.closest(".hero"));
       const isInServiceArea = Boolean(anchor.closest("#hire") || anchor.closest(".pricing-services-list") || anchor.closest(".service-card"));
+
+      if (anchor.hasAttribute("data-contact-page")) {
+        setHref(anchor, "contact.html");
+        return;
+      }
 
       if (anchor.classList.contains("social-icon") && applySocialLink(anchor)) {
         return;
