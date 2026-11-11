@@ -10,7 +10,7 @@ if (services && !document.querySelector('.bu-ribbon')) {
 }
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-  const elements = document.querySelectorAll('.service-card, #moresnap .feature, .snap-card, section h1, section h2, .section-tag, .hero .photo-arch img');
+  const elements = document.querySelectorAll('.service-card, .snap-card, section h1, section h2, .section-tag, .hero .photo-arch img');
   const mobileViewport = window.matchMedia('(max-width: 767px)');
   const indexes = new Map(Array.from(elements, (element, index) => [element, index]));
   const observer = new IntersectionObserver(entries => {

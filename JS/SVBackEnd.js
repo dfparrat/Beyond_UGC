@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
     totalSlides = Math.ceil(totalFeatures / itemsPerView);
     
     // Ajustar el ancho de cada feature
-    const featureWidth = carouselContainer.clientWidth / itemsPerView;
+    const featureWidth = carousel.clientWidth / itemsPerView;
     features.forEach(feature => {
       feature.style.flex = `0 0 ${featureWidth}px`;
       feature.style.maxWidth = `${featureWidth}px`;
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Mover el carrusel a la posición actual
   function updateCarouselPosition() {
-    const slideWidth = carouselContainer.clientWidth;
+    const slideWidth = carousel.clientWidth;
     const translateX = -currentIndex * slideWidth;
     carousel.style.transform = `translateX(${translateX}px)`;
   }

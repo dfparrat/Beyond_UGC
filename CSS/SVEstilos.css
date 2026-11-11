@@ -724,7 +724,7 @@ section {
 }
 
 #moresnap .features-carousel {
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
 }
 
