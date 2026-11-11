@@ -252,6 +252,170 @@ h1, h2, h3 {
   z-index: 1;
 }
 
+.mobile-hero-ring,
+.mobile-testimonial-marquee,
+.mobile-service-stack {
+  display: none;
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  #heroCarousel .photo-arch {
+    perspective: 600px;
+  }
+
+  #heroCarousel .photo-arch:has(.mobile-hero-ring) > img {
+    opacity: 0;
+    transition: none;
+  }
+
+  #heroCarousel .mobile-hero-ring {
+    --image-width: min(55vw, 220px);
+    --image-radius: calc(var(--image-width) / (2 * tan(180deg / var(--image-count))));
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--image-width);
+    height: 100%;
+    margin-left: calc(var(--image-width) / -2);
+    transform-style: preserve-3d;
+    animation: mobile-hero-rotate 16s linear infinite;
+    pointer-events: none;
+  }
+
+  #heroCarousel .mobile-hero-ring img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(calc(var(--image-index) * 360deg / var(--image-count))) translateZ(var(--image-radius));
+  }
+
+  #testimonialsSection .features-carousel-container:has(.mobile-testimonial-marquee) .features-carousel {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  #testimonialsSection .features-carousel-container:has(.mobile-testimonial-marquee) .carousel-dots,
+  #testimonialsSection .features-carousel-container:has(.mobile-testimonial-marquee) .carousel-nav {
+    display: none;
+  }
+
+  #testimonialsSection .mobile-testimonial-marquee {
+    display: grid;
+    gap: 1rem;
+  }
+
+  #testimonialsSection .mobile-testimonial-row {
+    overflow: hidden;
+  }
+
+  #testimonialsSection .mobile-testimonial-track,
+  #testimonialsSection .mobile-testimonial-group {
+    display: flex;
+    width: max-content;
+  }
+
+  #testimonialsSection .mobile-testimonial-track {
+    animation: mobile-testimonials-left 25s linear infinite;
+  }
+
+  #testimonialsSection .mobile-testimonial-row:nth-child(2) .mobile-testimonial-track {
+    animation-name: mobile-testimonials-right;
+  }
+
+  #testimonialsSection .mobile-testimonial-group {
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+
+  #testimonialsSection .mobile-testimonial-group .feature {
+    flex: 0 0 220px;
+    width: 220px;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  #testimonialsSection .mobile-testimonial-group .feature img {
+    flex: none;
+    height: 180px;
+  }
+
+  #testimonialsSection .mobile-testimonial-group .feature p {
+    display: none;
+  }
+
+  .main-container.HireMain:has(.mobile-service-stack) .services-showcase:not(:focus-within) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .main-container.HireMain .mobile-service-stack {
+    display: block;
+    position: relative;
+    width: min(80%, 320px);
+    height: 480px;
+    margin: 3rem auto 0;
+    perspective: 600px;
+    transform-style: preserve-3d;
+  }
+
+  .main-container.HireMain .mobile-service-stack > .service-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: mobile-service-shuffle calc(var(--card-count) * 3s) linear infinite;
+    animation-delay: calc(var(--card-index) * -3s);
+  }
+
+  .main-container.HireMain .mobile-service-stack > .service-card:nth-child(even) {
+    --exit-direction: -1;
+  }
+
+  .main-container.HireMain .mobile-service-stack > .service-card:nth-child(odd) {
+    --exit-direction: 1;
+  }
+}
+
+@keyframes mobile-hero-rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-360deg); }
+}
+
+@keyframes mobile-testimonials-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes mobile-testimonials-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes mobile-service-shuffle {
+  0% { transform: translate3d(0, 0, 30px) scale(1); opacity: 1; }
+  1% { transform: translate3d(calc(var(--exit-direction) * 110%), 0, 30px) rotate(calc(var(--exit-direction) * 8deg)); opacity: 0; }
+  2% { transform: translate3d(0, 24px, -30px) scale(.86); opacity: 0; }
+  3% { transform: translate3d(0, 24px, -30px) scale(.86); opacity: 1; }
+  100% { transform: translate3d(0, 0, 30px) scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #heroCarousel .mobile-hero-ring,
+  #testimonialsSection .mobile-testimonial-track,
+  .main-container.HireMain .mobile-service-stack > .service-card {
+    animation: none;
+  }
+}
+
 /* Prev / Next arrow buttons */
 .hero-carousel-btn {
   position: absolute;
