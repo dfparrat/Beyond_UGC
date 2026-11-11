@@ -6,6 +6,7 @@
     <meta name="keywords" content="Beyond UGC, creator team application, UGC careers">
     <meta name="description" content="Apply to join the Beyond UGC team.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#5A1A30">
     <title>Join The Team | Beyond UGC</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -29,7 +30,7 @@
     <style>
       .team-application-section {
         padding: 130px 20px 80px;
-        background: linear-gradient(180deg, #faf7f2 0%, #f4ede3 100%);
+        background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page) 100%);
       }
 
       .application-shell {
@@ -42,10 +43,10 @@
 
       .application-panel,
       .form-panel {
-        background: #fff;
-        border: 1px solid rgba(200, 170, 140, 0.22);
+        background: var(--bg-card);
+        border: 1px solid color-mix(in srgb, var(--rose) 22.0%, transparent);
         border-radius: 16px;
-        box-shadow: 0 14px 40px rgba(28, 28, 28, 0.08);
+        box-shadow: 0 14px 40px color-mix(in srgb, var(--burgundy) 8.0%, transparent);
       }
 
       .application-panel {
@@ -59,23 +60,23 @@
       .application-eyebrow {
         display: inline-block;
         padding: 6px 14px;
-        border: 1px solid #c9a98a;
+        border: 1px solid var(--rose);
         border-radius: 999px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         font-size: 12px;
-        color: #6b6058;
+        color: var(--burgundy);
         margin-bottom: 16px;
       }
 
       .application-panel h1 {
         font-size: clamp(2rem, 2.9vw, 2.9rem);
-        color: #1c1c1c;
+        color: var(--text-body);
         margin-bottom: 14px;
       }
 
       .application-panel p {
-        color: #6b6058;
+        color: var(--text-body);
         font-size: 0.98rem;
         line-height: 1.8;
         margin-bottom: 20px;
@@ -89,22 +90,22 @@
       }
 
       .role-chip {
-        border: 1px solid rgba(201, 169, 138, 0.42);
+        border: 1px solid color-mix(in srgb, var(--rose) 42.0%, transparent);
         border-radius: 12px;
         padding: 12px;
-        background: #fcfaf7;
+        background: var(--bg-page);
       }
 
       .role-chip strong {
         display: block;
         font-size: 0.95rem;
-        color: #1c1c1c;
+        color: var(--text-body);
         margin-bottom: 5px;
         font-family: 'Cormorant Garamond', serif;
       }
 
       .role-chip span {
-        color: #6b6058;
+        color: var(--text-body);
         font-size: 0.84rem;
       }
 
@@ -119,23 +120,23 @@
         align-items: start;
         gap: 10px;
         margin-bottom: 9px;
-        color: #6b6058;
+        color: var(--text-body);
         font-size: 0.9rem;
       }
 
       .application-list li i {
-        color: #c9a98a;
+        color: var(--text-body);
         margin-top: 5px;
       }
 
       .form-panel h2 {
         font-size: 1.9rem;
-        color: #1c1c1c;
+        color: var(--text-body);
         margin-bottom: 8px;
       }
 
       .form-panel .form-intro {
-        color: #6b6058;
+        color: var(--text-body);
         font-size: 0.92rem;
         margin-bottom: 18px;
       }
@@ -157,14 +158,14 @@
       .form-label {
         font-size: 0.84rem;
         margin-bottom: 6px;
-        color: #1c1c1c;
+        color: var(--text-body);
         font-weight: 500;
       }
 
       .form-control,
       .form-select {
         border-radius: 10px;
-        border: 1px solid rgba(201, 169, 138, 0.5);
+        border: 1px solid color-mix(in srgb, var(--rose) 50.0%, transparent);
         padding: 0.7rem 0.85rem;
       }
 
@@ -174,7 +175,7 @@
       }
 
       .form-note {
-        color: #6b6058;
+        color: var(--text-body);
         font-size: 0.81rem;
         margin-top: 4px;
       }
@@ -187,8 +188,8 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         font-weight: 600;
-        background: #1c1c1c;
-        color: #fff;
+        background: var(--btn-alt-bg);
+        color: var(--text-on-dark);
         transition: opacity 0.2s ease;
       }
 
@@ -367,7 +368,7 @@
         <div class="d-flex flex-column">
           <div class="d-flex align-items-center mb-3">
             <a href="index.html">
-              <img src="IMG/BUGC LOGO-GOLD.png" alt="BeyondUGC" style="max-height: 30px; filter: brightness(0) invert(1);">
+              <img src="IMG/BUGC LOGO-GOLD.png" alt="BeyondUGC" style="max-height: 30px; filter: brightness(0) invert(96%) sepia(9%) saturate(680%) hue-rotate(302deg) brightness(102%) contrast(100%);">
             </a>
             <div class="ms-3 d-flex gap-2">
               <a href="https://www.tiktok.com/@dianapardougc" class="social-icon"><i class="fab fa-tiktok"></i></a>

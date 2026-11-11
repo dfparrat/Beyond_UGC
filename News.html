@@ -6,6 +6,7 @@
     <meta name="keywords" content="Beyond UGC news, UGC tips, creator updates">
     <meta name="description" content="Beyond UGC News Blog: strategy updates, creator education, and social trends.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#5A1A30">
     <title>News Blog | Beyond UGC</title>
 
     <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_CODE">
@@ -30,7 +31,7 @@
     <style>
       .news-main {
         padding: 120px 1rem 70px;
-        background: linear-gradient(180deg, #faf7f2 0%, #ffffff 100%);
+        background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page) 100%);
       }
 
       .news-shell {
@@ -49,7 +50,7 @@
       }
 
       .news-heading p {
-        color: #6b6058;
+        color: var(--text-body);
         max-width: 720px;
         margin: 0 auto;
       }
@@ -61,11 +62,11 @@
       }
 
       .news-card {
-        background: #fff;
-        border: 1px solid rgba(201, 169, 138, 0.25);
+        background: var(--bg-card);
+        border: 1px solid color-mix(in srgb, var(--rose) 25.0%, transparent);
         border-radius: 14px;
         overflow: hidden;
-        box-shadow: 0 8px 24px rgba(28, 28, 28, 0.07);
+        box-shadow: 0 8px 24px color-mix(in srgb, var(--burgundy) 7.0%, transparent);
         display: flex;
         flex-direction: column;
       }
@@ -88,7 +89,7 @@
         font-size: 0.76rem;
         letter-spacing: 0.07em;
         text-transform: uppercase;
-        color: #c9a98a;
+        color: var(--burgundy);
       }
 
       .news-card h2 {
@@ -97,7 +98,7 @@
       }
 
       .news-card p {
-        color: #6b6058;
+        color: var(--text-body);
         font-size: 0.92rem;
         margin: 0;
       }
@@ -107,12 +108,12 @@
         font-size: 0.8rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: #1c1c1c;
+        color: var(--text-body);
         font-weight: 600;
       }
 
       .news-link:hover {
-        color: #c9a98a;
+        color: var(--text-body);
       }
 
       .article-list {
@@ -123,11 +124,11 @@
 
       .article-section {
         scroll-margin-top: 120px;
-        background: #ffffff;
-        border: 1px solid rgba(201, 169, 138, 0.25);
+        background: var(--bg-page);
+        border: 1px solid color-mix(in srgb, var(--rose) 25.0%, transparent);
         border-radius: 14px;
         padding: 1.25rem;
-        box-shadow: 0 8px 24px rgba(28, 28, 28, 0.07);
+        box-shadow: 0 8px 24px color-mix(in srgb, var(--burgundy) 7.0%, transparent);
       }
 
       .article-kicker {
@@ -136,7 +137,7 @@
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: #c9a98a;
+        color: var(--burgundy);
       }
 
       .article-section h3 {
@@ -144,14 +145,14 @@
       }
 
       .article-section p {
-        color: #4c4742;
+        color: var(--text-body);
         margin-bottom: 0.8rem;
       }
 
       .article-section ul {
         margin: 0;
         padding-left: 1.15rem;
-        color: #4c4742;
+        color: var(--text-body);
       }
 
       @media (max-width: 1024px) {
@@ -374,7 +375,7 @@
         <div class="d-flex flex-column">
           <div class="d-flex align-items-center mb-3">
             <a href="index.html">
-              <img src="IMG/BUGC LOGO-GOLD.png" alt="BeyondUGC" style="max-height: 30px; filter: brightness(0) invert(1);">
+              <img src="IMG/BUGC LOGO-GOLD.png" alt="BeyondUGC" style="max-height: 30px; filter: brightness(0) invert(96%) sepia(9%) saturate(680%) hue-rotate(302deg) brightness(102%) contrast(100%);">
             </a>
             <div class="ms-3 d-flex gap-2">
               <a href="https://www.tiktok.com/@dianapardougc" class="social-icon"><i class="fab fa-tiktok"></i></a>
