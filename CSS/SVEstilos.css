@@ -252,46 +252,79 @@ h1, h2, h3 {
   z-index: 1;
 }
 
-.mobile-hero-ring,
+.hero-image-ring {
+  display: none;
+}
+
+@supports (width: calc(1px * tan(45deg))) {
+  @media (prefers-reduced-motion: no-preference) {
+    #heroCarousel .photo-arch:has(.hero-image-ring) {
+      perspective: 600px;
+    }
+
+    #heroCarousel .photo-arch:has(.hero-image-ring) > img {
+      opacity: 0;
+    }
+
+    #heroCarousel .hero-image-ring {
+      --image-width: min(55vw, 220px);
+      --image-radius: calc(var(--image-width) / (2 * tan(180deg / var(--image-count))));
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: var(--image-width);
+      height: 100%;
+      margin-left: calc(var(--image-width) / -2);
+      transform-style: preserve-3d;
+      animation: hero-image-rotate 16s linear infinite;
+      pointer-events: none;
+    }
+
+    #heroCarousel .hero-image-ring > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transform: rotateY(calc(var(--image-index) * 360deg / var(--image-count))) translateZ(var(--image-radius));
+    }
+  }
+}
+
+@keyframes hero-image-rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-360deg); }
+}
+
 .mobile-testimonial-marquee,
 .mobile-service-stack {
   display: none;
 }
 
-@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
-  #heroCarousel .photo-arch {
-    perspective: 600px;
+@media (max-width: 768px) {
+  #heroCarousel > .hero-slide:not(:first-child),
+  #heroCarousel > .hero-carousel-btn,
+  #heroCarousel > .hero-carousel-dots {
+    display: none;
   }
 
-  #heroCarousel .photo-arch:has(.mobile-hero-ring) > img {
-    opacity: 0;
-    transition: none;
-  }
-
-  #heroCarousel .mobile-hero-ring {
-    --image-width: min(55vw, 220px);
-    --image-radius: calc(var(--image-width) / (2 * tan(180deg / var(--image-count))));
+  #heroCarousel > .hero-slide:first-child {
     display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: var(--image-width);
-    height: 100%;
-    margin-left: calc(var(--image-width) / -2);
-    transform-style: preserve-3d;
-    animation: mobile-hero-rotate 16s linear infinite;
-    pointer-events: none;
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
   }
 
-  #heroCarousel .mobile-hero-ring img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(calc(var(--image-index) * 360deg / var(--image-count))) translateZ(var(--image-radius));
+  #heroCarousel > .hero-carousel-btn,
+  #heroCarousel > .hero-carousel-dots {
+    display: none;
   }
+}
 
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
   #testimonialsSection .features-carousel-container:has(.mobile-testimonial-marquee) .features-carousel {
     position: absolute;
     width: 100%;
@@ -344,6 +377,7 @@ h1, h2, h3 {
     height: 180px;
   }
 
+  #testimonialsSection .mobile-testimonial-group .feature b,
   #testimonialsSection .mobile-testimonial-group .feature p {
     display: none;
   }
@@ -385,11 +419,6 @@ h1, h2, h3 {
   }
 }
 
-@keyframes mobile-hero-rotate {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(-360deg); }
-}
-
 @keyframes mobile-testimonials-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -409,7 +438,6 @@ h1, h2, h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #heroCarousel .mobile-hero-ring,
   #testimonialsSection .mobile-testimonial-track,
   .main-container.HireMain .mobile-service-stack > .service-card {
     animation: none;

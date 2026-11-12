@@ -12,21 +12,22 @@ if (services && !document.querySelector('.bu-ribbon')) {
 if (homePage) {
   const hero = document.querySelector('#heroCarousel');
   const heroImages = hero ? Array.from(hero.querySelectorAll('.hero-slide .photo-arch > img')) : [];
-  heroImages.forEach(image => {
-    const ring = document.createElement('div');
-    ring.className = 'mobile-hero-ring';
-    ring.setAttribute('aria-hidden', 'true');
-    ring.style.setProperty('--image-count', heroImages.length);
-    heroImages.forEach((source, index) => {
-      const clone = source.cloneNode(true);
-      clone.classList.remove('fx', 'fx-in');
-      clone.removeAttribute('style');
-      clone.setAttribute('aria-hidden', 'true');
-      clone.style.setProperty('--image-index', index);
-      ring.appendChild(clone);
+  if (heroImages.length >= 3) {
+    heroImages.forEach((image, imageIndex) => {
+      const ring = document.createElement('div');
+      ring.className = 'hero-image-ring';
+      ring.setAttribute('aria-hidden', 'true');
+      ring.style.setProperty('--image-count', heroImages.length);
+      heroImages.forEach((_, index) => {
+        const clone = heroImages[(imageIndex + index) % heroImages.length].cloneNode(true);
+        clone.classList.remove('fx', 'fx-in');
+        clone.removeAttribute('style');
+        clone.style.setProperty('--image-index', index);
+        ring.appendChild(clone);
+      });
+      image.parentElement.appendChild(ring);
     });
-    image.parentElement.appendChild(ring);
-  });
+  }
 
   const testimonials = document.querySelector('#testimonialsSection .features-carousel-container');
   const cards = testimonials ? Array.from(testimonials.querySelectorAll('.feature')) : [];

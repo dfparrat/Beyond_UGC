@@ -49,6 +49,7 @@ window.addEventListener('scroll', function() {
     const dots   = carousel.querySelectorAll('.hero-dot');
     const prev   = document.getElementById('heroPrev');
     const next   = document.getElementById('heroNext');
+    const mobileViewport = window.matchMedia('(max-width: 768px)');
     const TOTAL  = slides.length;
     const parsedInterval = parseInt(carousel.dataset.autoplayInterval || '', 10);
     const INTERVAL = Number.isFinite(parsedInterval) && parsedInterval > 0 ? parsedInterval : 5000;
@@ -56,6 +57,7 @@ window.addEventListener('scroll', function() {
     let timer;
 
     function goTo(index) {
+      if (mobileViewport.matches) return;
       slides[current].classList.remove('active');
       dots[current].classList.remove('active');
       dots[current].setAttribute('aria-selected', 'false');
@@ -67,7 +69,19 @@ window.addEventListener('scroll', function() {
 
     function startTimer() {
       clearInterval(timer);
+      timer = null;
+      if (mobileViewport.matches) return;
       timer = setInterval(function () { goTo(current + 1); }, INTERVAL);
+    }
+
+    function handleViewportChange() {
+      startTimer();
+    }
+
+    if (typeof mobileViewport.addEventListener === 'function') {
+      mobileViewport.addEventListener('change', handleViewportChange);
+    } else {
+      mobileViewport.addListener(handleViewportChange);
     }
 
     // Arrow buttons
@@ -326,7 +340,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let totalSlides = Math.ceil(totalFeatures / itemsPerView);
   let renderedItemsPerView = null;
   
-  // Determinar cuántos items mostrar según el ancho de pantalla
   function getItemsPerView() {
     const width = window.innerWidth;
     if (width >= 1024) return 3;
@@ -356,7 +369,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Configurar el ancho de los slides
   function updateCarousel() {
     itemsPerView = getItemsPerView();
     const shouldRebuild = renderedItemsPerView !== itemsPerView;
@@ -365,14 +377,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     totalSlides = Math.ceil(totalFeatures / itemsPerView);
     
-    // Ajustar el ancho de cada feature
     const featureWidth = carousel.clientWidth / itemsPerView;
     features.forEach(feature => {
       feature.style.flex = `0 0 ${featureWidth}px`;
       feature.style.maxWidth = `${featureWidth}px`;
     });
     
-    // Asegurar que el índice actual sea válido
     if (currentIndex >= totalSlides) {
       currentIndex = totalSlides - 1;
     }
@@ -387,14 +397,12 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDots();
   }
   
-  // Mover el carrusel a la posición actual
   function updateCarouselPosition() {
     const slideWidth = carousel.clientWidth;
     const translateX = -currentIndex * slideWidth;
     carousel.style.transform = `translateX(${translateX}px)`;
   }
   
-  // Crear puntos indicadores
   function createDots() {
     dotsContainer.innerHTML = '';
     for (let i = 0; i < totalSlides; i++) {
@@ -410,7 +418,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDots();
   }
   
-  // Actualizar punto activo
   function updateDots() {
     const dots = dotsContainer.querySelectorAll('.dot');
     dots.forEach((dot, index) => {
@@ -422,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Ir a un slide específico
   function goToSlide(index) {
     if (index < 0) index = 0;
     if (index >= totalSlides) index = totalSlides - 1;
@@ -431,32 +437,27 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDots();
   }
   
-  // Siguiente slide
   function nextSlide() {
     if (currentIndex < totalSlides - 1) {
       goToSlide(currentIndex + 1);
     } else {
-      // Volver al inicio (efecto infinito)
       goToSlide(0);
     }
   }
   
-  // Slide anterior
   function prevSlide() {
     if (currentIndex > 0) {
       goToSlide(currentIndex - 1);
     } else {
-      // Ir al final (efecto infinito)
       goToSlide(totalSlides - 1);
     }
   }
   
-  // Autoplay
   function startAutoSlide() {
     if (autoSlideInterval) clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => {
       nextSlide();
-    }, 5000); // Cambiar cada 5 segundos
+    }, 5000);
   }
   
   function stopAutoSlide() {
@@ -466,7 +467,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Event listeners para botones
   if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', () => {
       stopAutoSlide();
@@ -481,11 +481,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Pausar autoplay al hacer hover
   carouselContainer.addEventListener('mouseenter', stopAutoSlide);
   carouselContainer.addEventListener('mouseleave', startAutoSlide);
   
-  // Recalcular al redimensionar ventana
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
@@ -495,7 +493,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 250);
   });
   
-  // Inicializar
   rebuildCarousel();
   updateCarousel();
   createDots();
