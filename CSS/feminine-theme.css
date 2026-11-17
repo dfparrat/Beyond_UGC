@@ -31,7 +31,8 @@ body {
 
 h1 em,
 h2 em,
-.hero-left h1 em {
+.hero-left h1 em,
+.hero-left .hero-title em {
   color: var(--mauve);
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
@@ -424,7 +425,8 @@ a:hover {
   color: var(--champagne);
 }
 
-.hero h1 em {
+.hero h1 em,
+.hero .hero-title em {
   color: var(--rose);
 }
 

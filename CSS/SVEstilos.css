@@ -554,7 +554,8 @@ h1, h2, h3 {
   flex-shrink: 0;
 }
 
-.hero-left h1 {
+.hero-left h1,
+.hero-left .hero-title {
   font-size: clamp(36px, 4vw, 52px);
   font-weight: 400;
   line-height: 1.12;
@@ -562,7 +563,8 @@ h1, h2, h3 {
   margin-bottom: 22px;
 }
 
-.hero-left h1 em {
+.hero-left h1 em,
+.hero-left .hero-title em {
   font-style: italic;
   color: var(--text-on-dark);
 }
@@ -864,7 +866,7 @@ h1, h2, h3 {
   .float-stars { left: -10px; font-size: 12px; padding: 8px 14px; }
   .float-stat  { right: -10px; }
 
-  .hero-left h1 { font-size: 34px; }
+  .hero-left h1, .hero-left .hero-title { font-size: 34px; }
 }
 
 /* ===== CARRUSEL DE FEATURES - VERSIÓN CORREGIDA ===== */
