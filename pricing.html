@@ -27,6 +27,58 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/feminine-theme.css">
+    <style>
+      .pricing-services-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(12px, 2vw, 24px);
+      }
+
+      .course-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--bg-card);
+        border: 1px solid var(--rose);
+        border-radius: 12px;
+      }
+
+      .course-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+      }
+
+      .course-card p {
+        margin: 0;
+        color: var(--text-body);
+      }
+
+      .course-card .pricing-service-btn {
+        margin-top: auto;
+        align-self: flex-start;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (max-width: 640px) {
+        .pricing-services-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
 </head>
 <body>
 <header>
@@ -86,225 +138,254 @@
           <p>Explore the same services featured in our home page showcase, now arranged in one scrollable list for easier comparison and booking.</p>
         </div>
 
+        <section class="passport-showcase">
+          <span class="section-tag">Beyond UGC Academy</span>
+          <h2>Your passport to <span>UGC</span></h2>
+          <p>Meet the women behind the academy. Pack your ideas, we bring the stamps.</p>
+          <div class="passport-viewport">
+            <div class="passport-deck">
+              <span class="passport-sparkle sparkle-one" aria-hidden="true">✦</span>
+              <span class="passport-sparkle sparkle-two" aria-hidden="true">✦</span>
+              <span class="passport-sparkle sparkle-three" aria-hidden="true">✦</span>
+              <figure class="passport-card" style="--i:0;--r:-5deg">
+                <div class="pic">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/beyond_ugc_passport_diana_enhanced-400w.webp 400w, IMG/beyond_ugc_passport_diana_enhanced-800w.webp 800w" sizes="(max-width: 767px) 78vw, 30vw">
+                    <img src="IMG/beyond_ugc_passport_diana_enhanced.png" width="1122" height="1410" loading="lazy" decoding="async" alt="Diana Pardo's Beyond UGC Academy passport">
+                  </picture>
+                  <span class="stamp">UGC approved</span>
+                </div>
+                <figcaption><strong>Diana Pardo</strong><span>Mood: unbothered</span><p>UGC strategy, creator hiring and brand partnerships.</p></figcaption>
+              </figure>
+              <figure class="passport-card" style="--i:1;--r:0deg">
+                <div class="pic">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/beyond_ugc_passport_vale_enhanced-400w.webp 400w, IMG/beyond_ugc_passport_vale_enhanced-800w.webp 800w" sizes="(max-width: 767px) 78vw, 30vw">
+                    <img src="IMG/beyond_ugc_passport_vale_enhanced.png" width="1130" height="1436" loading="lazy" decoding="async" alt="Vale Mora's Beyond UGC Academy passport">
+                  </picture>
+                  <span class="stamp">UGC approved</span>
+                </div>
+                <figcaption><strong>Vale Mora</strong><span>Mood: chill</span><p>Lifestyle content and community building.</p></figcaption>
+              </figure>
+              <figure class="passport-card" style="--i:2;--r:5deg">
+                <div class="pic">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/beyond_ugc_passport_amelie_monroy_enhanced-400w.webp 400w, IMG/beyond_ugc_passport_amelie_monroy_enhanced-800w.webp 800w" sizes="(max-width: 767px) 78vw, 30vw">
+                    <img src="IMG/beyond_ugc_passport_amelie_monroy_enhanced.png" width="1122" height="1344" loading="lazy" decoding="async" alt="Alelie Monroy's Beyond UGC Academy passport">
+                  </picture>
+                  <span class="stamp">UGC approved</span>
+                </div>
+                <figcaption><strong>Alelie Monroy</strong><span>Mood: discipline</span><p>Digital marketing and personal finance.</p></figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="passport-caps" aria-hidden="true">
+            <div class="cp" style="--i:0"><strong>Diana Pardo</strong><span>Mood: unbothered</span><p>UGC strategy, creator hiring and brand partnerships.</p></div>
+            <div class="cp" style="--i:1"><strong>Vale Mora</strong><span>Mood: chill</span><p>Lifestyle content and community building.</p></div>
+            <div class="cp" style="--i:2"><strong>Alelie Monroy</strong><span>Mood: discipline</span><p>Digital marketing and personal finance.</p></div>
+          </div>
+        </section>
+
         <div aria-label="Services pricing list">
-          <section class="service-group mb-5">
+          <section id="ugc-niches" class="service-group mb-5">
             <h2>UGC niches</h2>
             <button class="btn pricing-service-btn mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#service-group-1" aria-expanded="true" aria-controls="service-group-1">Show/Hide UGC niches</button>
             <div class="collapse show" id="service-group-1">
               <div class="pricing-services-list">
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">01</div>
-                  <div class="pricing-service-copy">
-                    <h2>UGC Traditional</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get UGC Traditional">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/01-ugc-traditional-400w.webp 400w, IMG/01-ugc-traditional-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/01-ugc-traditional.jpg" width="1080" height="1080" alt="UGC Traditional" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">UGC Traditional</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get UGC Traditional">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">02</div>
-                  <div class="pricing-service-copy">
-                    <h2>Tech UGC</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Tech UGC">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/02-tech-ugc-400w.webp 400w, IMG/02-tech-ugc-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/02-tech-ugc.jpg" width="1080" height="1080" alt="Tech UGC" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Tech UGC</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Tech UGC">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">03</div>
-                  <div class="pricing-service-copy">
-                    <h2>Pet UGC</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Pet UGC">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/03-pet-ugc-400w.webp 400w, IMG/03-pet-ugc-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/03-pet-ugc.jpg" width="1080" height="1080" alt="Pet UGC" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Pet UGC</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Pet UGC">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">04</div>
-                  <div class="pricing-service-copy">
-                    <h2>Travel UGC</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Travel UGC">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/04-travel-ugc-400w.webp 400w, IMG/04-travel-ugc-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/04-travel-ugc.jpg" width="1080" height="1080" alt="Travel UGC" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Travel UGC</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Travel UGC">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">05</div>
-                  <div class="pricing-service-copy">
-                    <h2>AI UGC</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get AI UGC">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/05-ai-ugc-400w.webp 400w, IMG/05-ai-ugc-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/05-ai-ugc.jpg" width="1080" height="1080" alt="AI UGC" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">AI UGC</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get AI UGC">Get Yours</a>
                 </article>
               </div>
             </div>
           </section>
-          <section class="service-group mb-5">
+          <section id="content-social" class="service-group mb-5">
             <h2>Content and social media</h2>
             <button class="btn pricing-service-btn mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#service-group-2" aria-expanded="true" aria-controls="service-group-2">Show/Hide Content and social media</button>
             <div class="collapse show" id="service-group-2">
               <div class="pricing-services-list">
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">06</div>
-                  <div class="pricing-service-copy">
-                    <h2>YouTube Shorts</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get YouTube Shorts">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/06-youtube-shorts-400w.webp 400w, IMG/06-youtube-shorts-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/06-youtube-shorts.jpg" width="1080" height="1080" alt="YouTube Shorts" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">YouTube Shorts</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get YouTube Shorts">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">07</div>
-                  <div class="pricing-service-copy">
-                    <h2>CapCut Influencer Program</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get CapCut Influencer Program">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/07-capcut-influencer-program-400w.webp 400w, IMG/07-capcut-influencer-program-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/07-capcut-influencer-program.jpg" width="1080" height="1080" alt="CapCut Influencer Program" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">CapCut Influencer Program</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get CapCut Influencer Program">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">08</div>
-                  <div class="pricing-service-copy">
-                    <h2>Faceless Marketing + VSL</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Faceless Marketing + VSL">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/08-faceless-marketing-vsl-400w.webp 400w, IMG/08-faceless-marketing-vsl-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/08-faceless-marketing-vsl.jpg" width="1080" height="1080" alt="Faceless Marketing + VSL" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Faceless Marketing + VSL</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Faceless Marketing + VSL">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">09</div>
-                  <div class="pricing-service-copy">
-                    <h2>Substack</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Substack">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/09-substack-400w.webp 400w, IMG/09-substack-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/09-substack.jpg" width="1080" height="1080" alt="Substack" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Substack</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Substack">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">10</div>
-                  <div class="pricing-service-copy">
-                    <h2>Social Media Manager</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Social Media Manager">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/10-social-media-manager-400w.webp 400w, IMG/10-social-media-manager-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/10-social-media-manager.jpg" width="1080" height="1080" alt="Social Media Manager" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Social Media Manager</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Social Media Manager">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">11</div>
-                  <div class="pricing-service-copy">
-                    <h2>Higgsfield</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Higgsfield">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/11-higgsfield-400w.webp 400w, IMG/11-higgsfield-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/11-higgsfield.jpg" width="1080" height="1080" alt="Higgsfield" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Higgsfield</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Higgsfield">Get Yours</a>
                 </article>
               </div>
             </div>
           </section>
-          <section class="service-group mb-5">
+          <section id="income-ecommerce" class="service-group mb-5">
             <h2>Income streams and e-commerce</h2>
             <button class="btn pricing-service-btn mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#service-group-3" aria-expanded="true" aria-controls="service-group-3">Show/Hide Income streams and e-commerce</button>
             <div class="collapse show" id="service-group-3">
               <div class="pricing-services-list">
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">12</div>
-                  <div class="pricing-service-copy">
-                    <h2>Affiliate Marketing: Reselling Beyond UGC Academy</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Affiliate Marketing: Reselling Beyond UGC Academy">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/12-affiliate-marketing-reselling-beyond-ugc-academy-400w.webp 400w, IMG/12-affiliate-marketing-reselling-beyond-ugc-academy-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/12-affiliate-marketing-reselling-beyond-ugc-academy.jpg" width="1080" height="1080" alt="Affiliate Marketing: Reselling Beyond UGC Academy" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Affiliate Marketing: Reselling Beyond UGC Academy</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Affiliate Marketing: Reselling Beyond UGC Academy">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">13</div>
-                  <div class="pricing-service-copy">
-                    <h2>LTK</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get LTK">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/13-ltk-400w.webp 400w, IMG/13-ltk-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/13-ltk.jpg" width="1080" height="1080" alt="LTK" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">LTK</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get LTK">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">14</div>
-                  <div class="pricing-service-copy">
-                    <h2>Website Flipping + AI</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Website Flipping + AI">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/14-website-flipping-ai-400w.webp 400w, IMG/14-website-flipping-ai-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/14-website-flipping-ai.jpg" width="1080" height="1080" alt="Website Flipping + AI" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Website Flipping + AI</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Website Flipping + AI">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">15</div>
-                  <div class="pricing-service-copy">
-                    <h2>Dropshipping + AI</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Dropshipping + AI">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/15-dropshipping-ai-400w.webp 400w, IMG/15-dropshipping-ai-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/15-dropshipping-ai.jpg" width="1080" height="1080" alt="Dropshipping + AI" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Dropshipping + AI</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Dropshipping + AI">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">16</div>
-                  <div class="pricing-service-copy">
-                    <h2>Amazon KDP + AI</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Amazon KDP + AI">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/16-amazon-kdp-ai-400w.webp 400w, IMG/16-amazon-kdp-ai-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/16-amazon-kdp-ai.jpg" width="1080" height="1080" alt="Amazon KDP + AI" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Amazon KDP + AI</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Amazon KDP + AI">Get Yours</a>
                 </article>
               </div>
             </div>
           </section>
-          <section class="service-group mb-5">
+          <section id="skills-foundations" class="service-group mb-5">
             <h2>Skills and foundations</h2>
             <button class="btn pricing-service-btn mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#service-group-4" aria-expanded="true" aria-controls="service-group-4">Show/Hide Skills and foundations</button>
             <div class="collapse show" id="service-group-4">
               <div class="pricing-services-list">
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">17</div>
-                  <div class="pricing-service-copy">
-                    <h2>GEN X module (computer basics)</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get GEN X module (computer basics)">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/17-gen-x-module-computer-basics-400w.webp 400w, IMG/17-gen-x-module-computer-basics-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/17-gen-x-module-computer-basics.jpg" width="1080" height="1080" alt="GEN X module (computer basics)" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">GEN X module (computer basics)</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get GEN X module (computer basics)">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">18</div>
-                  <div class="pricing-service-copy">
-                    <h2>Virtual Assistant</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Virtual Assistant">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/18-virtual-assistant-400w.webp 400w, IMG/18-virtual-assistant-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/18-virtual-assistant.jpg" width="1080" height="1080" alt="Virtual Assistant" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">Virtual Assistant</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get Virtual Assistant">Get Yours</a>
                 </article>
-                <article class="pricing-service-item">
-                  <div class="pricing-service-index">19</div>
-                  <div class="pricing-service-copy">
-                    <h2>How to Be an Invisible Ally</h2>
-                  </div>
-                  <div class="pricing-service-meta">
-                    <span class="pricing-pill">Pricing on request</span>
-                    <a href="contact.html" class="btn pricing-service-btn" aria-label="Get How to Be an Invisible Ally">Get Yours</a>
-                  </div>
+                <article class="course-card">
+                  <picture>
+                    <source type="image/webp" srcset="IMG/19-how-to-be-an-invisible-ally-400w.webp 400w, IMG/19-how-to-be-an-invisible-ally-800w.webp 800w" sizes="(max-width:640px) 46vw, (max-width:1100px) 30vw, 360px">
+                    <img src="IMG/19-how-to-be-an-invisible-ally.jpg" width="1080" height="1080" alt="How to Be an Invisible Ally" loading="lazy" decoding="async">
+                  </picture>
+                  <h3 class="sr-only">How to Be an Invisible Ally</h3>
+                  <p>Pricing on request</p>
+                  <a href="contact.html" class="btn pricing-service-btn" aria-label="Get How to Be an Invisible Ally">Get Yours</a>
                 </article>
               </div>
             </div>
@@ -425,5 +506,6 @@
 
 </script>
 <script defer src="JS/feminine-fx.js"></script>
+<script defer src="JS/pricing-mobile.js"></script>
 </body>
 </html>
