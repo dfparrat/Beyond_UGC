@@ -657,8 +657,8 @@ a.card-link p {
 }
 
 @keyframes passport-twinkle {
-  0%, 100% { opacity: .45; transform: scale(.8) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.2) rotate(30deg); }
+  0%, 100% { opacity: .45; transform: translateZ(60px) scale(.8) rotate(0deg); }
+  50% { opacity: 1; transform: translateZ(60px) scale(1.2) rotate(30deg); }
 }
 
 @keyframes passport-shuffle {
@@ -718,6 +718,10 @@ a.card-link p {
     animation-delay: -3s;
   }
 
+  .passport-sparkle.sparkle-one,
+  .passport-sparkle.sparkle-three { left: -7%; }
+  .passport-sparkle.sparkle-two { right: -7%; }
+
   .passport-card figcaption {
     position: absolute;
     width: 1px;
@@ -746,6 +750,14 @@ a.card-link p {
   .passport-sparkle,
   .passport-caps .cp {
     animation: none;
+  }
+
+  .passport-card {
+    transition: none;
+  }
+
+  .passport-sparkle {
+    transform: translateZ(60px);
   }
 
   .passport-card .stamp,

@@ -1,4 +1,4 @@
-"""Generate course, Academy area and passport WebP images. Requires Pillow."""
+"""Generate course, Academy area and passport WebP images. Requires Pillow: pip install Pillow."""
 
 from pathlib import Path
 
@@ -22,7 +22,8 @@ PASSPORTS = (
 
 def generate(source):
     with Image.open(source) as image:
-        image = ImageOps.exif_transpose(image).convert("RGB")
+        image = ImageOps.exif_transpose(image)
+        image = image.convert("RGBA" if "A" in image.getbands() or "transparency" in image.info else "RGB")
         for width in (400, 800):
             height = max(1, round(image.height * width / image.width))
             resized = image.resize((width, height), Image.Resampling.LANCZOS)
