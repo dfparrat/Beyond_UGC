@@ -1455,6 +1455,10 @@ section {
             padding: 6rem 2rem 0;
             background: var(--bg-page);
         }
+        .snaps-section .academy-section-tag {
+            color: var(--champagne);
+            border-color: var(--bg-card);
+        }
         .snaps-section h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.8rem;

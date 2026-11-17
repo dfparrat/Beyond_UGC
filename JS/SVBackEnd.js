@@ -549,6 +549,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: false });
 });
 
+(function () {
+  document.querySelectorAll('.snaps-section picture[data-area-image]').forEach(picture => {
+    const name = picture.dataset.areaImage;
+    const path = `IMG/areas/${name}`;
+    const probe = new Image();
+    probe.onload = () => {
+      const source = picture.querySelector('source');
+      const image = picture.querySelector('img');
+      image.addEventListener('error', () => source.removeAttribute('srcset'), { once: true });
+      source.removeAttribute('srcset');
+      image.src = `${path}.jpg`;
+      source.srcset = `${path}-400w.webp 400w, ${path}-800w.webp 800w`;
+    };
+    probe.src = `${path}.jpg`;
+  });
+})();
+
 // === 4 sERVICES Mobile carousel JS====================
 (function() {
             const container = document.getElementById('snapsContainer');
